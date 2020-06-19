@@ -1,24 +1,21 @@
-import React, { Component } from "react";
-import { Route, withRouter, Redirect } from "react-router-dom"
-// import Home from "./home/Home.js";
+import { Route } from 'react-router-dom'
+import React, { Component } from 'react'
+import Home from "./home/Home.js";
 
 class ApplicationViews extends Component {
-
   render() {
     return (
       <React.Fragment>
-        {/* <Route
+        <Route
           exact
           path="/"
           render={(props) => {
-            return <Home authProp={this.isAuthenticated()} {...props}/>;
+            return <Home />;
           }}
-        /> */}
+        />
       </React.Fragment>
     );
   }
 }
 
-export default ApplicationViews
-
-
+export default ApplicationViews;
