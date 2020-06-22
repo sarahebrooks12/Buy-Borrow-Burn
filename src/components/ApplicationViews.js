@@ -8,9 +8,9 @@ class ApplicationViews extends Component {
       <React.Fragment>
         <Route
           exact
-          path="/"
+          path="/home"
           render={(props) => {
-            return <Home />;
+            return <Home  {...props}/>
           }}
         />
       </React.Fragment>

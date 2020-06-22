@@ -1,9 +1,8 @@
-import React, { Component } from "react"
-import NavBar from "./nav/NavBar"
-import ApplicationViews from "./ApplicationViews"
+import React, { Component } from "react";
+import NavBar from "./nav/NavBar";
+import ApplicationViews from "./ApplicationViews";
 
-
-class BBB extends Component {
+class Main extends Component {
   render() {
     return (
       <>
@@ -14,4 +13,4 @@ class BBB extends Component {
   }
 }
 
-export default BBB;
+export default Main;

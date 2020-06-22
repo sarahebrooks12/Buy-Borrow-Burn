@@ -33,10 +33,20 @@
             "title": "Harry Potter and the Philosopher's Stone",
             "author": "J.K. Rowling",
             "genre": "Fantasy",
-            "ratingId": "1",
+            "ratingId": 1,
             "googleBooksRating": "5/5",
             "userId": 1,
             "favorite": true
+        },
+        {
+            "id": 2,
+            "title": "The Magicians",
+            "author": "Lev Grossman",
+            "genre": "Fantasy",
+            "ratingId": 3,
+            "googleBooksRating": "GROSS",
+            "userId": 1,
+            "favorite": false
         }
     ]
 }
