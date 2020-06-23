@@ -49,9 +49,10 @@ class NavBar extends Component {
         vertical
         visible
       >
+        {/* add image to top corner? make it longer that way? */}
         <Menu vertical fluid={true}>
           <Menu.Item
-            id="button"
+            id="buttonNav"
             as={NavLink}
             to="/home"
             name="home"
@@ -62,7 +63,7 @@ class NavBar extends Component {
           </Menu.Item>
 
           <Menu.Item
-            id="button"
+            id="buttonNav"
             as={NavLink}
             to="/myBookshelf"
             name="myBookshelf"
@@ -74,7 +75,19 @@ class NavBar extends Component {
           </Menu.Item>
 
           <Menu.Item
-            id="button"
+            id="buttonNav"
+            as={NavLink}
+            to="/browse"
+            name="browse"
+            active={activeItem === "browse"}
+            onClick={this.handleItemClick}
+          >
+            <Label>51</Label>
+            Browse
+          </Menu.Item>
+
+          <Menu.Item
+            id="buttonNav"
             as={NavLink}
             to="/following"
             name="following"
