@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Input, Label, Menu, Sidebar, Icon } from "semantic-ui-react";
 import { NavLink, withRouter } from "react-router-dom";
 import BookManager from "../../modules/BookManager";
-
+import "./NavBar.css";
 class NavBar extends Component {
   state = {
     activeItem: "inbox",
@@ -40,16 +40,18 @@ class NavBar extends Component {
 
     return (
       <Sidebar
+        id="sideBar"
         as={Menu}
         animation="overlay"
         icon="labeled"
-        inverted
+        direction="left"
+        // inverted
         vertical
         visible
-        width="thin"
       >
         <Menu vertical fluid={true}>
           <Menu.Item
+            id="button"
             as={NavLink}
             to="/home"
             name="home"
@@ -60,6 +62,7 @@ class NavBar extends Component {
           </Menu.Item>
 
           <Menu.Item
+            id="button"
             as={NavLink}
             to="/myBookshelf"
             name="myBookshelf"
@@ -71,6 +74,7 @@ class NavBar extends Component {
           </Menu.Item>
 
           <Menu.Item
+            id="button"
             as={NavLink}
             to="/following"
             name="following"
@@ -84,7 +88,7 @@ class NavBar extends Component {
             <Input
               id="searchBar"
               icon="search"
-              placeholder="Search bookshelves..."
+              placeholder="Search..."
               onChange={this.handleFieldChange}
               onKeyDown={this.add}
             />
