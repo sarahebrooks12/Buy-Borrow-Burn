@@ -5,12 +5,12 @@ class Search extends React.Component {
   render() {
     return (
       <Card.Group itemsPerRow={3}>
-        {/* <Card>
+        <Card>
           <Image
-            src={this.props.searchProp.volumeInfo.imageLinks.thumbnail}
+            src={this.props.searchProp.volumeInfo.imageLinks.smallThumbnail}
             wrapped
-            ui={false}
-          /> */}
+            ui={false}n
+          />
           <Card.Content>
             <Card.Header>{this.props.searchProp.volumeInfo.title}</Card.Header>
             <Card.Meta>
