@@ -1,6 +1,7 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from "./home/Home.js";
+import SearchList from "./search/SearchList"
 
 class ApplicationViews extends Component {
   render() {
@@ -12,6 +13,13 @@ class ApplicationViews extends Component {
           render={(props) => {
             return <Home  {...props}/>
           }}
+        />
+        <Route 
+        exact
+        path="/browse"
+        render={(props) => {
+          return <SearchList {...props}/>
+        }}
         />
       </React.Fragment>
     );
