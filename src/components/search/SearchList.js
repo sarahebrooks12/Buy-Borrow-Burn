@@ -1,36 +1,53 @@
 import React, { Component } from "react";
-//import the components we will need
 import SearchResultsCard from "./SearchResultsCard";
-// import BookManager from "../../modules/BookManager";
+import BookManager from "../../modules/BookManager";
 // import { Button, Icon } from "semantic-ui-react";
 
 class SearchList extends Component {
-  // state = {
-  //   books: [],
-  // };
+  state = {
+    ratings: []
+  };
 
-  // componentDidMount() {
-  //   BookManager.getAll().then((books) => {
-  //     this.setState({
-  //       books: books,
-  //     });
-  //   });
-  // }
+  componentDidMount() {
+    BookManager.getRatings().then((ratings) => {
+      const rateOption = ratings.map(x => {
+
+        return ({
+         key: x.id,
+         text: x.name,
+         value: x.id
+       })
+      })
+      this.setState({
+        ratings: rateOption,
+      });
+    });
+  }
 
   render() {
     return (
       <>
-      <div>
-        {this.props.history.location.state.detail.map((currentBookInLoop) => {
-          return (
-            <SearchResultsCard
-              key={currentBookInLoop.id}
-              searchProp={currentBookInLoop}
-            />
-           
-          );
-        })}
-         </div>
+        <div>
+          {/* {this.state.ratings.map((currentRatingInLoop) => {
+            return (
+              <SearchResultsCard
+                key={currentRatingInLoop.id}
+                ratingProp={currentRatingInLoop}
+              />
+            );
+          })} */}
+        </div>
+        <div>
+          {this.props.history.location.state.detail.map((currentBookInLoop) => {
+            return (
+              <SearchResultsCard
+                key={currentBookInLoop.id}
+                searchProp={currentBookInLoop}
+                ratingProp={this.state.ratings}
+              />
+            );
+          })}
+        </div>
       </>
     );
   }
