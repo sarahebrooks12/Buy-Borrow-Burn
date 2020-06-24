@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from "./home/Home.js";
 import SearchList from "./search/SearchList"
+import ResourceCard from './reusables/ResourceCard'
 
 class ApplicationViews extends Component {
   render() {
@@ -19,6 +20,13 @@ class ApplicationViews extends Component {
         path="/searchResults"
         render={(props) => {
           return <SearchList {...props}/>
+        }}
+        />
+        <Route 
+        exact
+        path="/myBookshelf"
+        render={(props) => {
+          return <ResourceCard {...props}/>
         }}
         />
       </React.Fragment>
