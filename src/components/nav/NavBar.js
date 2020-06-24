@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Label, Menu, Sidebar, Icon } from "semantic-ui-react";
+import { Input, Label, Menu, Sidebar } from "semantic-ui-react";
 import { NavLink, withRouter } from "react-router-dom";
 import BookManager from "../../modules/BookManager";
 import "./NavBar.css";

@@ -18,6 +18,11 @@ export default {
       `https://www.googleapis.com/books/v1/volumes?q=inauthor:${userSearch}&orderBy=relevance&key=${APIKey.googleBooksKey}`
     ).then((result) => result.json());
   },
+  getRatings(){
+    return fetch(`${remoteURL}/ratings`).then((result) =>
+    result.json()
+  )
+  },
   getAll(id) {
     return fetch(`${remoteURL}/myBookshelf/${id}`).then((result) =>
       result.json()
