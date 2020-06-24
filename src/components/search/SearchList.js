@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 //import the components we will need
-import SearchCard from "./SearchCard";
-import BookManager from "../../modules/BookManager";
+import SearchResultsCard from "./SearchResultsCard";
+// import BookManager from "../../modules/BookManager";
 // import { Button, Icon } from "semantic-ui-react";
 
 class SearchList extends Component {
-  state = {
-    books: [],
-  };
+  // state = {
+  //   books: [],
+  // };
 
-  componentDidMount() {
-    BookManager.getAll().then((books) => {
-      this.setState({
-        books: books,
-      });
-    });
-  }
+  // componentDidMount() {
+  //   BookManager.getAll().then((books) => {
+  //     this.setState({
+  //       books: books,
+  //     });
+  //   });
+  // }
 
   render() {
     return (
@@ -23,7 +23,7 @@ class SearchList extends Component {
       <div>
         {this.props.history.location.state.detail.map((currentBookInLoop) => {
           return (
-            <SearchCard
+            <SearchResultsCard
               key={currentBookInLoop.id}
               searchProp={currentBookInLoop}
             />

@@ -16,7 +16,7 @@ class ApplicationViews extends Component {
         />
         <Route 
         exact
-        path="/browse"
+        path="/searchResults"
         render={(props) => {
           return <SearchList {...props}/>
         }}

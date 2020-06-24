@@ -20,7 +20,7 @@ class NavBar extends Component {
   add = (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
-      BookManager.getSearch(this.state.searchBar).then((response) => {
+      BookManager.getGeneralSearch(this.state.searchBar).then((response) => {
         // console.log(this.props.history.location.state.detail[0].volumeInfo.title)
         // console.log(this.props.history.location.state.detail[0].volumeInfo.authors[0])
         // console.log(this.props.history.location.state.detail[0].volumeInfo.description)
@@ -28,7 +28,7 @@ class NavBar extends Component {
         // console.log(this.state.searchBar, "what are you?");
         // console.log(response, "is this api?");
         this.props.history.push({
-          pathname: "/browse",
+          pathname: "/searchResults",
           state: { detail: response.items },
         });
       });
@@ -39,6 +39,8 @@ class NavBar extends Component {
     const { activeItem } = this.state;
 
     return (
+      <>
+      <p>Sarah</p>
       <Sidebar
         id="sideBar"
         as={Menu}
@@ -50,7 +52,10 @@ class NavBar extends Component {
         visible
       >
         {/* add image to top corner? make it longer that way? */}
-        <Menu vertical fluid={true}>
+        <Menu 
+        color="purple"
+        vertical 
+        fluid={true}>
           <Menu.Item
             id="buttonNav"
             as={NavLink}
@@ -70,8 +75,8 @@ class NavBar extends Component {
             active={activeItem === "myBookshelf"}
             onClick={this.handleItemClick}
           >
-            <Label>51</Label>
-            My Bookshelf
+            <Label size="tiny">51</Label>
+           Bookshelf
           </Menu.Item>
 
           <Menu.Item
@@ -82,7 +87,7 @@ class NavBar extends Component {
             active={activeItem === "browse"}
             onClick={this.handleItemClick}
           >
-            <Label>51</Label>
+            <Label size="tiny">51</Label>
             Browse
           </Menu.Item>
 
@@ -94,13 +99,13 @@ class NavBar extends Component {
             active={activeItem === "following"}
             onClick={this.handleItemClick}
           >
-            <Label>1</Label>
+            <Label size="tiny">1</Label>
             Following
           </Menu.Item>
           <Menu.Item>
             <Input
               id="searchBar"
-              icon="search"
+              icon="tiny search"
               placeholder="Search..."
               onChange={this.handleFieldChange}
               onKeyDown={this.add}
@@ -108,6 +113,7 @@ class NavBar extends Component {
           </Menu.Item>
         </Menu>
       </Sidebar>
+      </>
     );
   }
 }
