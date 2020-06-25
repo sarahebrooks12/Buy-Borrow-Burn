@@ -56,6 +56,17 @@
       "userId": 1,
       "favorite": true,
       "id": 6
+    },
+    {
+      "title": "Verity",
+      "author": [
+        "Colleen Hoover"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 5,
+      "userId": 1,
+      "favorite": true,
+      "id": 7
     }
   ]
 }

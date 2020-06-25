@@ -2,7 +2,7 @@ import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from "./home/Home.js";
 import SearchList from "./search/SearchList"
-import ResourceCard from './reusables/ResourceCard'
+import BookList from './books/BookList'
 
 class ApplicationViews extends Component {
   render() {
@@ -26,7 +26,7 @@ class ApplicationViews extends Component {
         exact
         path="/myBookshelf"
         render={(props) => {
-          return <ResourceCard {...props}/>
+          return <BookList {...props}/>
         }}
         />
       </React.Fragment>
