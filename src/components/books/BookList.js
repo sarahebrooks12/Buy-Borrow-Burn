@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 //import the components we will need
-import ResourceCard from "./reusables/ResourceCard";
+import BookCard from "./BookCard";
 import BookManager from "../../modules/BookManager";
-import "./EventList.css";
-import { Button, Icon } from 'semantic-ui-react'
+// import { Button, Icon } from "semantic-ui-react";
 
 class BookList extends Component {
   state = {
@@ -11,7 +10,7 @@ class BookList extends Component {
   };
 
   componentDidMount() {
-    BookManager.getAll().then((books) => {
+    BookManager.getAllBooks().then((books) => {
       this.setState({
         books: books,
       });
@@ -19,42 +18,20 @@ class BookList extends Component {
   }
 
   render() {
-//     this.state.books.sort((a, b) => { 
-//       return a.date > b.date ? 1 : -1;
-//    });
-
+    //     this.state.books.sort((a, b) => {
+    //       return a.date > b.date ? 1 : -1;
+    //    });
 
     return (
       <>
-      {/* <Button animated>
-      <Button.Content visible>Add Book</Button.Content>
-      <Button.Content hidden>
-        <Icon name='book' />
-      </Button.Content>
-      </Button> */}
-        {/* //   <Button
-        //   variant="outline-dark"
-        //     type="button"
-        //     className="btn"
-        //     onClick={() => {
-        //       this.props.history.push("/myBookshelf/new");
-        //     }}
-        //   >
-        //     Add Event
-        //   </Button> */}
-          
-          {this.state.books.map((currentBookInLoop) => {
-            return (
-              <ResourceCard
-              
-                key={currentBookInLoop.id}
-                resource={currentBookInLoop}
-              />
-            
-            );
-            
-          })}
-          
+        {this.state.books.map((currentBookInLoop) => {
+          return (
+            <BookCard
+              key={currentBookInLoop.id}
+              bookProp={currentBookInLoop}
+            />
+          );
+        })}
       </>
     );
   }

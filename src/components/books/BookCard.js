@@ -11,23 +11,18 @@ class ResourceCard extends React.Component {
             <Card.Group itemsPerRow={4}>
               <Card>
                 <Card.Content>
-                  <Card.Header>Title</Card.Header>
+                  <Card.Header>{this.props.bookProp.title}</Card.Header>
                   <Card.Meta>
-                    <span>Author</span>
+                    <span>{this.props.bookProp.author}</span>
                   </Card.Meta>
                   <a>
                     <Icon name="star" />
-                    
+                      {this.props.bookProp.googleBooksRating}
                     <br />
                     {/* if rating = this then print this ternary statement */}
-                    <Icon name="dollar" />
-                    
-                    <br />
-                    <Icon name="heart outline" />
-                   
-                    <br />
-                    <Icon name="fire" />
-                   
+                    {this.props.bookProp.ratingId === 1 ? (
+               <Icon name="dollar" />
+              ) : this.props.bookProp.ratingId === 2 ? (<Icon name="heart outline" />) : this.props.bookProp.ratingId === 3 ? ( <Icon name="fire" />) : ("")}
                   </a>
                 </Card.Content>
               </Card>
@@ -36,7 +31,7 @@ class ResourceCard extends React.Component {
         </Grid.Row>
 
         <Grid.Row columns={1}>
-          <Grid.Column >To Read</Grid.Column>
+          <Grid.Column>To Read</Grid.Column>
         </Grid.Row>
 
         <Grid.Row columns={1}>
