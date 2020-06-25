@@ -30,7 +30,7 @@ class SearchResultsCard extends React.Component {
       ratingId: this.state.ratingId,
       googleBooksRating: this.props.searchProp.volumeInfo.averageRating,
       userId: 1,
-      favorite: "",
+      favorite: this.state.favorite,
     };
     BookManager.postBook(bookObject).then(() =>
       this.props.history.push("/myBookshelf")
@@ -40,11 +40,13 @@ class SearchResultsCard extends React.Component {
  handleDropDownChange= (event, {value}) => {
     this.setState({ratingId: value})
 }
-
-  handleFavorite = () => {
-    this.setState({ favorite: true });
-    {this.state.checked === true ? (BookManager.favoriteBook(this.props.bookId).then (() => this.props.history.push("/books"))): ("")}
+//evt.target.checked=true or false
+//setState
+//set Favorite property in state to either true or false
+  handleFavorite = (event, {checked}) => {
+    this.setState({ favorite: checked });
   }
+  
 
   render() {
     return (
@@ -123,7 +125,10 @@ class SearchResultsCard extends React.Component {
               </Modal.Description>
             </Modal.Content>
 
-            <Checkbox label="Favorite" />
+            <Checkbox
+            label="Favorite"
+            onChange={this.handleFavorite}
+            />
             <Dropdown
               placeholder="Select Rating"
               fluid
