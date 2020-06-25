@@ -13,11 +13,6 @@ import "./SearchCard.css";
 //grid nor card group is working? take off description and try again?
 //connect modal into this card
 class SearchResults extends React.Component {
-
-
-
-
-
   render() {
     return (
       <>
@@ -32,10 +27,13 @@ class SearchResults extends React.Component {
                   wrapped
                   size="small"
                   ui={false}
-                  
                 />
               ) : (
-                <Image src={require('./No_Img_Avail.jpg')} alt="Not Available" size="small"/>
+                <Image
+                  src={require("./No_Img_Avail.jpg")}
+                  alt="Not Available"
+                  size="small"
+                />
               )}
 
               <Card.Content>
@@ -45,9 +43,12 @@ class SearchResults extends React.Component {
                 <Card.Meta>
                   <span>{this.props.searchProp.volumeInfo.authors}</span>
                 </Card.Meta>
-                {/* <Card.Description>
-                  {this.props.searchProp.volumeInfo.description}
-                </Card.Description> */}
+                <div className="ui divider">
+                  <a>
+                    <Icon name="star" />
+                    {this.props.searchProp.volumeInfo.averageRating}
+                  </a>
+                </div>
               </Card.Content>
             </Card>
           </Card.Group>
@@ -67,7 +68,7 @@ class SearchResults extends React.Component {
               {this.props.searchProp.volumeInfo.title}
             </Modal.Header>
             <Modal.Content image>
-            {this.props.searchProp.volumeInfo.imageLinks ? (
+              {this.props.searchProp.volumeInfo.imageLinks ? (
                 <Image
                   src={
                     this.props.searchProp.volumeInfo.imageLinks.smallThumbnail
@@ -75,10 +76,13 @@ class SearchResults extends React.Component {
                   wrapped
                   size="small"
                   ui={false}
-                  
                 />
               ) : (
-                <Image src={require('./No_Img_Avail.jpg')} alt="Not Available" size="small"/>
+                <Image
+                  src={require("./No_Img_Avail.jpg")}
+                  alt="Not Available"
+                  size="small"
+                />
               )}
               <Modal.Description>
                 <Header>{this.props.searchProp.volumeInfo.authors}</Header>
