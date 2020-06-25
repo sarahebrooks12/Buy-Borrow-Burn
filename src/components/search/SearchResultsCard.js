@@ -11,40 +11,42 @@ import {
   Dropdown,
 } from "semantic-ui-react";
 import "./SearchCard.css";
-import BookManager from "../../modules/BookManager"
+import BookManager from "../../modules/BookManager";
 //grid nor card group is working? take off description and try again?
 //connect modal into this card
 
-class SearchResults extends React.Component {
+class SearchResultsCard extends React.Component {
+  state = {
+    ratingId: "",
+    favorite: false
+  };
 
   createNewBook = (evt) => {
-    //this stops from loading on page load
+    console.log(this.state.ratingId);
     evt.preventDefault();
-    // if (this.state.name === "" || this.state.date === "") {
-    //   window.alert("Please input all fields");
-    // } else {
-    //   this.setState({ loadingStatus: true });
-      // matches what is in the database
-      const bookObject = {
-        title: this.props.searchProp.volumeInfo.title,
+    const bookObject = {
+      title: this.props.searchProp.volumeInfo.title,
       author: this.props.searchProp.volumeInfo.authors,
-      ratingId: this.props.ratingProp,
+      ratingId: this.state.ratingId,
       googleBooksRating: this.props.searchProp.volumeInfo.averageRating,
       userId: 1,
-      favorite: ""
-      };
-      BookManager.postBook(bookObject).then(() =>
-      this.props.history.push("/myBookshelf"));
+      favorite: "",
     };
-    
-    // handleFavorite = () => {
-    //   // this.setState({ loadingStatus: true });
-    //   {this.state.checked === true ? (BookManager.favoriteBook(this.props.bookId).then (() => this.props.history.push("/books"))): ("")}
-    // }
+    BookManager.postBook(bookObject).then(() =>
+      this.props.history.push("/myBookshelf")
+    );
+  };
 
+ handleDropDownChange= (event, {value}) => {
+    this.setState({ratingId: value})
+}
+
+  handleFavorite = () => {
+    this.setState({ favorite: true });
+    {this.state.checked === true ? (BookManager.favoriteBook(this.props.bookId).then (() => this.props.history.push("/books"))): ("")}
+  }
 
   render() {
-
     return (
       <>
         <div id="searchCard">
@@ -120,23 +122,18 @@ class SearchResults extends React.Component {
                 {this.props.searchProp.volumeInfo.description}
               </Modal.Description>
             </Modal.Content>
-            
-            <Checkbox
-            label="Favorite"
-             />
-             {/* onChange to set state --- then grab that in object to post */}
+
+            <Checkbox label="Favorite" />
             <Dropdown
               placeholder="Select Rating"
               fluid
               selection
               options={this.props.ratingProp}
+              onChange={this.handleDropDownChange}
             />
             <br />
-         
-            <Button 
-            animated
-            onClick={this.createNewBook}
-            >
+
+            <Button animated onClick={this.createNewBook}>
               <Button.Content visible>Add to Shelf</Button.Content>
               <Button.Content hidden>
                 <Icon name="book" />
@@ -149,4 +146,4 @@ class SearchResults extends React.Component {
   }
 }
 
-export default withRouter(SearchResults);
+export default withRouter(SearchResultsCard);
