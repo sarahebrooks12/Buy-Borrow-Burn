@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import {
   Card,
   Icon,
@@ -10,10 +11,40 @@ import {
   Dropdown,
 } from "semantic-ui-react";
 import "./SearchCard.css";
+import BookManager from "../../modules/BookManager"
 //grid nor card group is working? take off description and try again?
 //connect modal into this card
+
 class SearchResults extends React.Component {
+
+  createNewBook = (evt) => {
+    //this stops from loading on page load
+    evt.preventDefault();
+    // if (this.state.name === "" || this.state.date === "") {
+    //   window.alert("Please input all fields");
+    // } else {
+    //   this.setState({ loadingStatus: true });
+      // matches what is in the database
+      const bookObject = {
+        title: this.props.searchProp.volumeInfo.title,
+      author: this.props.searchProp.volumeInfo.authors,
+      ratingId: this.props.ratingProp,
+      googleBooksRating: this.props.searchProp.volumeInfo.averageRating,
+      userId: 1,
+      favorite: ""
+      };
+      BookManager.postBook(bookObject).then(() =>
+      this.props.history.push("/myBookshelf"));
+    };
+    
+    // handleFavorite = () => {
+    //   // this.setState({ loadingStatus: true });
+    //   {this.state.checked === true ? (BookManager.favoriteBook(this.props.bookId).then (() => this.props.history.push("/books"))): ("")}
+    // }
+
+
   render() {
+
     return (
       <>
         <div id="searchCard">
@@ -89,7 +120,11 @@ class SearchResults extends React.Component {
                 {this.props.searchProp.volumeInfo.description}
               </Modal.Description>
             </Modal.Content>
-            <Checkbox label="Favorite" />
+            
+            <Checkbox
+            label="Favorite"
+             />
+             {/* onChange to set state --- then grab that in object to post */}
             <Dropdown
               placeholder="Select Rating"
               fluid
@@ -97,7 +132,11 @@ class SearchResults extends React.Component {
               options={this.props.ratingProp}
             />
             <br />
-            <Button animated>
+         
+            <Button 
+            animated
+            onClick={this.createNewBook}
+            >
               <Button.Content visible>Add to Shelf</Button.Content>
               <Button.Content hidden>
                 <Icon name="book" />
@@ -109,4 +148,5 @@ class SearchResults extends React.Component {
     );
   }
 }
-export default SearchResults;
+
+export default withRouter(SearchResults);
