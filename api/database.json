@@ -1,50 +1,61 @@
 {
-    "users": [
-        {
-            "id":1,
-            "name": "Sarah",
-            "email": "sarah@sarah.com",
-            "password": 123
-        },
-        {
-            "id": 2,
-            "name": "Paul",
-            "email": "paul@paul.com",
-            "password": 123
-        }
-    ],
-    "ratings": [
-        {
-            "id": 1,
-            "name": "Buy"
-        },
-        {
-            "id": 2,
-            "name": "Borrow"
-        },
-        {
-            "id": 3,
-            "name": "Burn"
-        }
-    ],
-    "books":[
-        {
-            "id": 1,
-            "title": "Harry Potter and the Philosopher's Stone",
-            "author": "J.K. Rowling",
-            "ratingId": 1,
-            "googleBooksRating": "5/5",
-            "userId": 1,
-            "favorite": true
-        },
-        {
-            "id": 2,
-            "title": "The Magicians",
-            "author": "Lev Grossman",
-            "ratingId": 3,
-            "googleBooksRating": "GROSS",
-            "userId": 1,
-            "favorite": false
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Sarah",
+      "email": "sarah@sarah.com",
+      "password": 123
+    },
+    {
+      "id": 2,
+      "name": "Paul",
+      "email": "paul@paul.com",
+      "password": 123
+    }
+  ],
+  "ratings": [
+    {
+      "id": 1,
+      "name": "Buy"
+    },
+    {
+      "id": 2,
+      "name": "Borrow"
+    },
+    {
+      "id": 3,
+      "name": "Burn"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "ratingId": 1,
+      "googleBooksRating": 4.5,
+      "userId": 1,
+      "favorite": true
+    },
+    {
+      "id": 2,
+      "title": "The Magicians",
+      "author": "Lev Grossman",
+      "ratingId": 3,
+      "googleBooksRating": 3.1,
+      "userId": 1,
+      "favorite": false
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "author": [
+        "J.K. Rowling"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4.5,
+      "userId": 1,
+      "favorite": true,
+      "id": 6
+    }
+  ]
 }
