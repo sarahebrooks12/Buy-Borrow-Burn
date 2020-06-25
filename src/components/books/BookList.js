@@ -26,12 +26,12 @@ class BookList extends Component {
 
     return (
       <>
-      <Button animated>
+      {/* <Button animated>
       <Button.Content visible>Add Book</Button.Content>
       <Button.Content hidden>
         <Icon name='book' />
       </Button.Content>
-      </Button>
+      </Button> */}
         {/* //   <Button
         //   variant="outline-dark"
         //     type="button"
