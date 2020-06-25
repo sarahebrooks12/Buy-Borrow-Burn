@@ -1,4 +1,5 @@
 import APIKey from "./APIKey.js";
+import { RatingIcon } from "semantic-ui-react";
 const remoteURL = "http://localhost:8088";
 
 //search is not returning expected results might need more detailed search option from browse page
@@ -49,6 +50,15 @@ export default {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({"available": false}),
+    }).then((data) => data.json());
+  },
+  rateBook(rating) {
+    return fetch(`${remoteURL}/books`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({"ratingId": rating}),
     }).then((data) => data.json());
   },
   updateBook(editedBook) {
