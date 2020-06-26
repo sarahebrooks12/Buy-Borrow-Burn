@@ -1,53 +1,114 @@
 import React from "react";
-import { Grid, Image, Card, Icon } from "semantic-ui-react";
+import {
+  Image,
+  Card,
+  Icon,
+  Modal,
+  Header,
+  Button,
+  Checkbox,
+  Dropdown,
+} from "semantic-ui-react";
+import BookManager from "../../modules/BookManager";
 
-class ResourceCard extends React.Component {
+class BookCard extends React.Component {
+  state = {
+    ratingId: "",
+    favorite: false,
+  };
+
+  handleDropDownChange = (event, { value }) => {
+    this.setState({ ratingId: value });
+  };
+
+  handleFavorite = (event, { checked }) => {
+    this.setState({ favorite: checked });
+  };
+// \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//
+// This is currently not working --- is it an application views problem? I'm gonna assume that delete will do the same damn thing.
+  updateBook = (evt) => {
+    evt.preventDefault();
+    const bookObject = {
+      title: this.props.bookProp.title,
+      author: this.props.bookProp.author,
+      ratingId: this.state.ratingId,
+      googleBooksRating: this.props.bookProp.googleBooksRating,
+      image: this.props.bookProp.image,
+      userId: "",
+      favorite: this.state.favorite,
+    }
+    BookManager.updateBook(bookObject).then(() =>
+      this.props.history.push("/myBookshelf")
+    )
+  };
+
+  ternary = (that) => {
+    if (this.props.bookProp.ratingId === 1) {
+      that = "dollar";
+    } else if (this.props.bookProp.ratingId === 2) {
+      that = "heart outline";
+    } else if (this.props.bookProp.ratingId === 3) {
+      that = "fire";
+    }
+  };
+
   render() {
     return (
-      <Grid divided="vertically">
-        <Grid.Row columns={1}>
-          <Grid.Column>Favorite</Grid.Column>
-          <div class="test" id="searchCard">
-            <Card.Group itemsPerRow={4}>
-              <Card>
-                <Card.Content>
-                  <Card.Header>{this.props.bookProp.title}</Card.Header>
-                  <Card.Meta>
-                    <span>{this.props.bookProp.author}</span>
-                  </Card.Meta>
-                  <a>
-                    <Icon name="star" />
-                      {this.props.bookProp.googleBooksRating}
-                    <br />
-                    {/* if rating = this then print this ternary statement */}
-                    {this.props.bookProp.ratingId === 1 ? (
-               <Icon name="dollar" />
-              ) : this.props.bookProp.ratingId === 2 ? (<Icon name="heart outline" />) : this.props.bookProp.ratingId === 3 ? ( <Icon name="fire" />) : ("")}
-                  </a>
-                </Card.Content>
-              </Card>
-            </Card.Group>
-          </div>
-        </Grid.Row>
+      <>
+        <div>
+          <Modal
+            trigger={
+              <Card
+                href="#class"
+                header={this.props.bookProp.title}
+                meta={this.props.bookProp.author}
+                image={this.props.bookProp.image}
+                icon={this.ternary}
+              />
+            }
+          >
+            <Modal.Header>{this.props.bookProp.title}</Modal.Header>
+            <Modal.Content image>
+              {this.props.bookProp.image ? (
+                <Image
+                  src={this.props.bookProp.image}
+                  wrapped
+                  size="small"
+                  ui={false}
+                />
+              ) : (
+                <Image
+                  src={require("./No_Img_Avail.jpg")}
+                  alt="Not Available"
+                  size="small"
+                />
+              )}
+              <Modal.Description>
+                <Header>{this.props.bookProp.author}</Header>
+              </Modal.Description>
+            </Modal.Content>
 
-        <Grid.Row columns={1}>
-          <Grid.Column>To Read</Grid.Column>
-        </Grid.Row>
+            <Checkbox label="Favorite" onChange={this.handleFavorite} />
+            <Dropdown
+              placeholder="Select Rating"
+              fluid
+              selection
+              options={this.props.ratingProp}
+              onChange={this.handleDropDownChange}
+            />
+            <br />
 
-        <Grid.Row columns={1}>
-          <Grid.Column>Buy</Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row columns={1}>
-          <Grid.Column>Borrow</Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row columns={1}>
-          <Grid.Column>Burn</Grid.Column>
-        </Grid.Row>
-      </Grid>
+            <Button animated onClick={this.updateBook}>
+              <Button.Content visible>Update</Button.Content>
+              <Button.Content hidden>
+                <Icon name="book" />
+              </Button.Content>
+            </Button>
+          </Modal>
+        </div>
+      </>
     );
   }
 }
 
-export default ResourceCard;
+export default BookCard;

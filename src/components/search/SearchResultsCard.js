@@ -29,6 +29,7 @@ class SearchResultsCard extends React.Component {
       author: this.props.searchProp.volumeInfo.authors,
       ratingId: this.state.ratingId,
       googleBooksRating: this.props.searchProp.volumeInfo.averageRating,
+      image: this.props.searchProp.volumeInfo.imageLinks.smallThumbnail,
       userId: 1,
       favorite: this.state.favorite,
     };
