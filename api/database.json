@@ -89,15 +89,15 @@
       "id": 5
     },
     {
+      "id": 6,
       "title": "Caraval",
       "author": [
         "Stephanie Garber"
       ],
-      "ratingId": 4,
+      "ratingId": 1,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": false,
-      "id": 6
+      "favorite": false
     },
     {
       "title": "The Goldfinch",

@@ -5,14 +5,12 @@ import BookManager from "../../modules/BookManager";
 import { Grid } from "semantic-ui-react";
 import BookCard from "./BookCard";
 
-
-//filter different categories and then put different categories into state
 class BookList extends Component {
   state = {
     books: [],
     ratings: [],    
   };
-  //filter in >>>
+  //map to go into dropdown menu --- specific to semantics
   componentDidMount() {
     BookManager.getRatings().then((ratings) => {
       const rateOption = ratings.map((x) => {
@@ -37,7 +35,7 @@ class BookList extends Component {
   render() {
     return (
       <>
-  
+  {/* Items are filtered then mapped into correct bookshelves */}
         <Grid divided="vertically">
           <br />
             <Grid.Row columns={1}>
