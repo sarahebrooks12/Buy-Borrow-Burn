@@ -53,16 +53,16 @@
       "favorite": false
     },
     {
+      "id": 3,
       "title": "Harry Potter and the Prisoner of Azkaban",
       "author": [
         "J. K. Rowling"
       ],
-      "ratingId": 1,
+      "ratingId": 2,
       "googleBooksRating": 4.5,
       "image": "http://books.google.com/books/content?id=swJWQ5qq804C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
-      "favorite": true,
-      "id": 3
+      "favorite": false
     },
     {
       "title": "Verity",
@@ -87,6 +87,41 @@
       "userId": 1,
       "favorite": false,
       "id": 5
+    },
+    {
+      "title": "Caraval",
+      "author": [
+        "Stephanie Garber"
+      ],
+      "ratingId": 4,
+      "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 6
+    },
+    {
+      "title": "The Goldfinch",
+      "author": [
+        "Donna Tartt"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 3.5,
+      "image": "http://books.google.com/books/content?id=eN4lngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 7
+    },
+    {
+      "title": "Swan Song",
+      "author": [
+        "Robert McCammon"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 8
     }
   ]
 }

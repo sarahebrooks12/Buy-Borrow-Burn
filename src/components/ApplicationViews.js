@@ -3,11 +3,32 @@ import React, { Component } from 'react'
 import Home from "./home/Home.js";
 import SearchList from "./search/SearchList"
 import BookList from './books/BookList'
+import Register from "./auth/Register.js";
+
 
 class ApplicationViews extends Component {
+  isAuthenticated = () => localStorage.getItem("userId") !== null;
+
   render() {
     return (
       <React.Fragment>
+        {/* <Route
+          exact
+          path="/"
+          render={(props) => {
+            return <Login authProp={this.isAuthenticated()} {...props}/>;
+          }}
+        /> */}
+        <Route
+          exact
+          path="/"
+          render={(props) => {
+            return <Register {...props} />;
+          }}
+        />
+        {/* <Route path="/login" component={Login} /> */}
+       
+       
         <Route
           exact
           path="/home"

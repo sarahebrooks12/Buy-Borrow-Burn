@@ -5,11 +5,14 @@ import BookManager from "../../modules/BookManager";
 import { Grid } from "semantic-ui-react";
 import BookCard from "./BookCard";
 
+
+//filter different categories and then put different categories into state
 class BookList extends Component {
   state = {
     books: [],
-    ratings: [],
+    ratings: [],    
   };
+  //filter in >>>
   componentDidMount() {
     BookManager.getRatings().then((ratings) => {
       const rateOption = ratings.map((x) => {
@@ -28,12 +31,18 @@ class BookList extends Component {
         books: books,
       });
     });
+
   }
 
   render() {
     return (
       <>
-        {this.state.books.map((currentBookInLoop) => {
+  
+        <Grid divided="vertically">
+          <br />
+            <Grid.Row columns={1}>
+              <Grid.Column>Want to Read</Grid.Column>
+              {this.state.books.filter(x => x.ratingId === 4).map((currentBookInLoop) => {
           return (
             <BookCard
               key={currentBookInLoop.id}
@@ -42,79 +51,65 @@ class BookList extends Component {
             />
           );
         })}
-        <Grid divided="vertically">
-          <br />
-
-          {/* 4 divs if true place in div */}
-          {this.state.books.ratingId === 4 ? (
-            <Grid.Row columns={1}>
-              <Grid.Column>Want to Read</Grid.Column>
-              <BookCard />
             </Grid.Row>
-          ) : (
-            <Grid.Row columns={1}>
-              <Grid.Column>Want to Read</Grid.Column>
-            </Grid.Row>
-          )}
 
-          {this.state.books.favorite === true ? (
             <Grid.Row columns={1}>
               <Grid.Column>Favorites</Grid.Column>
-              <BookCard
-                bookProp={this.props.bookProp}
-                ratingProp={this.props.ratingProp}
-                {...this.props}
-              />
+              {this.state.books.filter(x => x.favorite === true).map((currentBookInLoop) => {
+          return (
+            <BookCard
+              key={currentBookInLoop.id}
+              bookProp={currentBookInLoop}
+              ratingProp={this.state.ratings}
+            />
+          );
+        })}
             </Grid.Row>
-          ) : (
-            <Grid.Row columns={1}>
-              <Grid.Column>Favorites</Grid.Column>
-            </Grid.Row>
-          )}
 
-          {this.state.books.ratingId === 1 ? (
+
+    
             <Grid.Row columns={1}>
               <Grid.Column>Buy</Grid.Column>
-              <BookCard 
-              bookProp={this.props.bookProp}
-              ratingProp={this.props.ratingProp}
-              {...this.props} />
+              {this.state.books.filter(x => x.ratingId === 1).map((currentBookInLoop) => {
+          return (
+            <BookCard
+              key={currentBookInLoop.id}
+              bookProp={currentBookInLoop}
+              ratingProp={this.state.ratings}
+            />
+          );
+        })}
             </Grid.Row>
-          ) : (
-            <Grid.Row columns={1}>
-              <Grid.Column>Buy</Grid.Column>
-            </Grid.Row>
-          )}
+       
 
-          {this.state.books.ratingId === 2 ? (
+
             <Grid.Row columns={1}>
               <Grid.Column>Borrow</Grid.Column>
-              <BookCard 
-              bookProp={this.props.bookProp}
-              ratingProp={this.props.ratingProp}
-              {...this.props}
-              />
+              {this.state.books.filter(x => x.ratingId === 2).map((currentBookInLoop) => {
+          return (
+            <BookCard
+              key={currentBookInLoop.id}
+              bookProp={currentBookInLoop}
+              ratingProp={this.state.ratings}
+            />
+          );
+        })}
             </Grid.Row>
-          ) : (
-            <Grid.Row columns={1}>
-              <Grid.Column>Borrow</Grid.Column>
-            </Grid.Row>
-          )}
+      
 
-          {this.state.books.ratingId === 3 ? (
             <Grid.Row columns={1}>
               <Grid.Column>Burn</Grid.Column>
-              <BookCard 
-              bookProp={this.props.bookProp}
-              ratingProp={this.props.ratingProp}
-              {...this.props}
-              />
+              {this.state.books.filter(x => x.ratingId === 3).map((currentBookInLoop) => {
+          return (
+            <BookCard
+              key={currentBookInLoop.id}
+              bookProp={currentBookInLoop}
+              ratingProp={this.state.ratings}
+            />
+          );
+        })}
             </Grid.Row>
-          ) : (
-            <Grid.Row columns={1}>
-              <Grid.Column>Burn</Grid.Column>
-            </Grid.Row>
-          )}
+          
         </Grid>
       </>
     );
