@@ -4,6 +4,9 @@ const RegisterManager = {
     getAll() {
         return fetch(`${remoteURL}/users`).then((result) => result.json());
       },
+      getByEmail(email){
+        return fetch(`${remoteURL}/users?email=${email}`).then((result) => result.json());
+      },
     post(newUser) {
     return fetch(`${remoteURL}/users`, {
       method: "POST",
