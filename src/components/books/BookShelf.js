@@ -13,7 +13,8 @@ class ResourceCard extends React.Component {
           <Grid.Row columns={1}>
             <Grid.Column>Favorites</Grid.Column>
             <BookCard bookProp={this.props.bookProp} 
-            ratingProp={this.props.ratingProp}/>
+            ratingProp={this.props.ratingProp}
+            {...this.props}/>
           </Grid.Row>
         ) : (
             <Grid.Row columns={1}>
@@ -24,8 +25,11 @@ class ResourceCard extends React.Component {
         {this.props.bookProp.ratingId === 1 ? (
           <Grid.Row columns={1}>
             <Grid.Column>Buy</Grid.Column>
-            <BookCard bookProp={this.props.bookProp}
-            ratingProp={this.props.ratingProp} />
+            <BookCard 
+            bookProp={this.props.bookProp}
+            ratingProp={this.props.ratingProp}
+            {...this.props} 
+            />
           </Grid.Row>
         ) : (
             <Grid.Row columns={1}>
@@ -36,8 +40,10 @@ class ResourceCard extends React.Component {
         {this.props.bookProp.ratingId === 2 ? (
           <Grid.Row columns={1}>
             <Grid.Column>Borrow</Grid.Column>
-            <BookCard bookProp={this.props.bookProp}
-            ratingProp={this.props.ratingProp} />
+            <BookCard 
+            bookProp={this.props.bookProp}
+            ratingProp={this.props.ratingProp} 
+            {...this.props}/>
           </Grid.Row>
         ) : (
             <Grid.Row columns={1}>
@@ -49,7 +55,8 @@ class ResourceCard extends React.Component {
           <Grid.Row columns={1}>
             <Grid.Column>Burn</Grid.Column>
             <BookCard bookProp={this.props.bookProp}
-            ratingProp={this.props.ratingProp} />
+            ratingProp={this.props.ratingProp} 
+            {...this.props}/>
           </Grid.Row>
         ) : (
           <Grid.Row columns={1}>
@@ -60,7 +67,8 @@ class ResourceCard extends React.Component {
           <Grid.Row columns={1}>
             <Grid.Column>Want to Read</Grid.Column>
             <BookCard bookProp={this.props.bookProp}
-            ratingProp={this.props.ratingProp} />
+            ratingProp={this.props.ratingProp} 
+            {...this.props}/>
           </Grid.Row>
         ) : (
             <Grid.Row columns={1}>

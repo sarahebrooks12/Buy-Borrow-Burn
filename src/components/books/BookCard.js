@@ -24,20 +24,21 @@ class BookCard extends React.Component {
   handleFavorite = (event, { checked }) => {
     this.setState({ favorite: checked });
   };
-// \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//
-// This is currently not working --- is it an application views problem? I'm gonna assume that delete will do the same damn thing.
+
   updateBook = (evt) => {
     evt.preventDefault();
     const bookObject = {
+      id: this.props.bookProp.id,
       title: this.props.bookProp.title,
       author: this.props.bookProp.author,
       ratingId: this.state.ratingId,
       googleBooksRating: this.props.bookProp.googleBooksRating,
       image: this.props.bookProp.image,
-      userId: "",
+      userId: this.props.bookProp.userId,
       favorite: this.state.favorite,
     }
-    BookManager.updateBook(bookObject).then(() =>
+    BookManager.updateBook(bookObject)
+    .then(() =>
       this.props.history.push("/myBookshelf")
     )
   };
@@ -45,20 +46,22 @@ class BookCard extends React.Component {
   deleteBook = () => {
     //invoke the delete function in AnimalManger and re-direct to the animal list.
     this.setState({loadingStatus: true})
-    BookManager.delete(this.props.bookId)
+    BookManager.deleteBook(this.props.bookProp.id)
     .then(() => this.props.history.push("/myBookshelf"))
 }
 
-
+confirmClick = (event, data) => {
+  this.props.handleClose();
+}
 
 
   ternary = (that) => {
     if (this.props.bookProp.ratingId === 1) {
-      that = "dollar";
+      that = 'Buy';
     } else if (this.props.bookProp.ratingId === 2) {
-      that = "heart outline";
+      that = 'Borrow';
     } else if (this.props.bookProp.ratingId === 3) {
-      that = "fire";
+      that = 'Burn';
     }
   };
 
@@ -73,7 +76,7 @@ class BookCard extends React.Component {
                 header={this.props.bookProp.title}
                 meta={this.props.bookProp.author}
                 image={this.props.bookProp.image}
-                icon={this.ternary}
+                extra={this.ternary}
               />
             }
           >
@@ -108,7 +111,7 @@ class BookCard extends React.Component {
             />
             <br />
 
-            <Button animated onClick={this.updateBook}>
+            <Button animated onClick={this.updateBook} closeIcon>
               <Button.Content visible>Update</Button.Content>
               <Button.Content hidden>
                 <Icon name="edit outline" />
