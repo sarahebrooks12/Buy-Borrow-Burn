@@ -21,12 +21,6 @@ class NavBar extends Component {
     if (event.keyCode === 13) {
       event.preventDefault();
       BookManager.getGeneralSearch(this.state.searchBar).then((response) => {
-        // console.log(this.props.history.location.state.detail[0].volumeInfo.title)
-        // console.log(this.props.history.location.state.detail[0].volumeInfo.authors[0])
-        // console.log(this.props.history.location.state.detail[0].volumeInfo.description)
-        // console.log(this.props.history.location.state.detail[0].volumeInfo.averageRating)
-        // console.log(this.state.searchBar, "what are you?");
-        // console.log(response, "is this api?");
         this.props.history.push({
           pathname: "/searchResults",
           state: { detail: response.items },

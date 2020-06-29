@@ -63,6 +63,30 @@
       "userId": 1,
       "favorite": true,
       "id": 3
+    },
+    {
+      "title": "Verity",
+      "author": [
+        "Colleen Hoover"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 5,
+      "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 4
+    },
+    {
+      "title": "Ninth House",
+      "author": [
+        "Leigh Bardugo"
+      ],
+      "ratingId": 2,
+      "googleBooksRating": 3.5,
+      "image": "http://books.google.com/books/content?id=6dt_DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 5
     }
   ]
 }
