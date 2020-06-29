@@ -42,6 +42,16 @@ class BookCard extends React.Component {
     )
   };
 
+  deleteBook = () => {
+    //invoke the delete function in AnimalManger and re-direct to the animal list.
+    this.setState({loadingStatus: true})
+    BookManager.delete(this.props.bookId)
+    .then(() => this.props.history.push("/myBookshelf"))
+}
+
+
+
+
   ternary = (that) => {
     if (this.props.bookProp.ratingId === 1) {
       that = "dollar";
@@ -101,7 +111,13 @@ class BookCard extends React.Component {
             <Button animated onClick={this.updateBook}>
               <Button.Content visible>Update</Button.Content>
               <Button.Content hidden>
-                <Icon name="book" />
+                <Icon name="edit outline" />
+              </Button.Content>
+            </Button>
+            <Button animated onClick={this.deleteBook}>
+              <Button.Content visible>Delete</Button.Content>
+              <Button.Content hidden>
+                <Icon name="trash alternate outline" />
               </Button.Content>
             </Button>
           </Modal>
