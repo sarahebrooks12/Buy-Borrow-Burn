@@ -2,12 +2,34 @@ import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from "./home/Home.js";
 import SearchList from "./search/SearchList"
-import ResourceCard from './reusables/ResourceCard'
+import BookList from './books/BookList'
+import Register from "./auth/Register.js";
+import Login from "./auth/Login.js"
+
 
 class ApplicationViews extends Component {
+  isAuthenticated = () => localStorage.getItem("userId") !== null;
+
   render() {
     return (
       <React.Fragment>
+        <Route
+          exact
+          path="/register"
+          render={(props) => {
+            return <Register authProp={this.isAuthenticated()} {...props}/>;
+          }}
+        />
+        <Route
+          exact
+          path="/"
+          render={(props) => {
+            return <Login {...props} />;
+          }}
+        />
+        {/* <Route path="/login" component={Login} /> */}
+       
+       
         <Route
           exact
           path="/home"
@@ -26,7 +48,7 @@ class ApplicationViews extends Component {
         exact
         path="/myBookshelf"
         render={(props) => {
-          return <ResourceCard {...props}/>
+          return <BookList {...props}/>
         }}
         />
       </React.Fragment>
