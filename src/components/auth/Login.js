@@ -58,6 +58,7 @@ class Login extends Component {
             <Grid.Column>
               <Form onSubmit={this.handleLogin}>
                 <Form.Input
+                  id="email"
                   onChange={this.handleFieldChange}
                   icon="user"
                   iconPosition="left"
@@ -66,6 +67,7 @@ class Login extends Component {
                   placeholder="Email"
                 />
                 <Form.Input
+                  id="password"
                   onChange={this.handleFieldChange}
                   icon="lock"
                   iconPosition="left"

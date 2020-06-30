@@ -40,7 +40,7 @@ class BookCard extends React.Component {
       favorite: this.state.favorite,
     };
     BookManager.updateBook(bookObject).then(
-      () => this.props.getAll,
+      () => this.props.getAllProp()
       // this.confirmClick
     );
   };
@@ -49,14 +49,14 @@ class BookCard extends React.Component {
     //invoke the delete function in AnimalManger and re-direct to the animal list.
     this.setState({ loadingStatus: true });
     BookManager.deleteBook(this.props.bookProp.id).then(() =>
-      this.props.history.push("/myBookshelf#class")
+    this.props.getAllProp()
     );
   };
   
 
-  // confirmClick = (event, data) => {
-  //   this.props.handleClose();
-  // };
+  confirmClick = (event, { data }) => {
+    this.props.handleClose();
+  };
 
   // sizeSmall = () => {
   //   {this.props.bookProp.image}
@@ -80,7 +80,7 @@ class BookCard extends React.Component {
             trigger={
               <Card
                 id="resizeThis"
-                href="#class"
+                // href="#class"
                 header={this.props.bookProp.title}
                 meta={this.props.bookProp.author}
                 image={this.props.bookProp.image}

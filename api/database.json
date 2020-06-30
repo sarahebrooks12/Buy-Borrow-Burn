@@ -13,24 +13,6 @@
       "password": 123
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 3
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
       "name": "angela",
       "email": "angela@angela.com",
       "password": "texas007",
@@ -41,6 +23,12 @@
       "email": "swathi@swathi.com",
       "password": "234",
       "id": 7
+    },
+    {
+      "name": "Tommy",
+      "email": "tommy@tommy.com",
+      "password": "123",
+      "id": 8
     }
   ],
   "ratings": [
@@ -124,24 +112,13 @@
       "author": [
         "Stephanie Garber"
       ],
-      "ratingId": 1,
+      "ratingId": 4,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false
     },
     {
-      "title": "The Goldfinch",
-      "author": [
-        "Donna Tartt"
-      ],
-      "ratingId": 4,
-      "googleBooksRating": 3.5,
-      "image": "http://books.google.com/books/content?id=eN4lngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "userId": 1,
-      "favorite": false,
-      "id": 7
-    },
-    {
+      "id": 8,
       "title": "Swan Song",
       "author": [
         "Robert McCammon"
@@ -150,8 +127,19 @@
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
+      "favorite": false
+    },
+    {
+      "title": "The Death of Mrs. Westaway",
+      "author": [
+        "Ruth Ware"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 3.5,
+      "image": "http://books.google.com/books/content?id=rXVEDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
       "favorite": false,
-      "id": 8
+      "id": 11
     }
   ]
 }

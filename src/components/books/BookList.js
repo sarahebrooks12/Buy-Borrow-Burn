@@ -8,7 +8,7 @@ import BookCard from "./BookCard";
 class BookList extends Component {
   state = {
     books: [],
-    ratings: [],    
+    ratings: [],
   };
   //map to go into dropdown menu --- specific to semantics
   componentDidMount() {
@@ -29,87 +29,101 @@ class BookList extends Component {
         books: books,
       });
     });
-
   }
 
-
+  getAllRefresh = () => {
+    BookManager.getAllBooks().then((books) => {
+      this.setState({
+        books: books,
+      });
+    });
+  };
   //getAll that can change state --- send prop that can change state
   render() {
     return (
       <>
-  {/* Items are filtered then mapped into correct bookshelves */}
+        {/* Items are filtered then mapped into correct bookshelves */}
         <Grid divided="vertically">
           <br />
-            <Grid.Row columns={1}>
-              <Grid.Column>Want to Read</Grid.Column>
-              {this.state.books.filter(x => x.ratingId === 4).map((currentBookInLoop) => {
-          return (
-            <BookCard
-              key={currentBookInLoop.id}
-              bookProp={currentBookInLoop}
-              ratingProp={this.state.ratings}
-            />
-          );
-        })}
-            </Grid.Row>
+          <Grid.Row columns={1}>
+            <Grid.Column>Want to Read</Grid.Column>
+            {this.state.books
+              .filter((x) => x.ratingId === 4)
+              .map((currentBookInLoop) => {
+                return (
+                  <BookCard
+                    getAllProp={this.getAllRefresh}
+                    key={currentBookInLoop.id}
+                    bookProp={currentBookInLoop}
+                    ratingProp={this.state.ratings}
+                  />
+                );
+              })}
+          </Grid.Row>
 
-            <Grid.Row columns={1}>
-              <Grid.Column>Favorites</Grid.Column>
-              {this.state.books.filter(x => x.favorite === true).map((currentBookInLoop) => {
-          return (
-            <BookCard
-              key={currentBookInLoop.id}
-              bookProp={currentBookInLoop}
-              ratingProp={this.state.ratings}
-            />
-          );
-        })}
-            </Grid.Row>
+          <Grid.Row columns={1}>
+            <Grid.Column>Favorites</Grid.Column>
+            {this.state.books
+              .filter((x) => x.favorite === true)
+              .map((currentBookInLoop) => {
+                return (
+                  <BookCard
+                    getAllProp={this.getAllRefresh}
+                    key={currentBookInLoop.id}
+                    bookProp={currentBookInLoop}
+                    ratingProp={this.state.ratings}
+                  />
+                );
+              })}
+          </Grid.Row>
 
+          <Grid.Row columns={1}>
+            <Grid.Column>Buy</Grid.Column>
+            {this.state.books
+              .filter((x) => x.ratingId === 1)
+              .map((currentBookInLoop) => {
+                return (
+                  <BookCard
+                    getAllProp={this.getAllRefresh}
+                    key={currentBookInLoop.id}
+                    bookProp={currentBookInLoop}
+                    ratingProp={this.state.ratings}
+                  />
+                );
+              })}
+          </Grid.Row>
 
-    
-            <Grid.Row columns={1}>
-              <Grid.Column>Buy</Grid.Column>
-              {this.state.books.filter(x => x.ratingId === 1).map((currentBookInLoop) => {
-          return (
-            <BookCard
-              key={currentBookInLoop.id}
-              bookProp={currentBookInLoop}
-              ratingProp={this.state.ratings}
-            />
-          );
-        })}
-            </Grid.Row>
-       
+          <Grid.Row columns={1}>
+            <Grid.Column>Borrow</Grid.Column>
+            {this.state.books
+              .filter((x) => x.ratingId === 2)
+              .map((currentBookInLoop) => {
+                return (
+                  <BookCard
+                    getAllProp={this.getAllRefresh}
+                    key={currentBookInLoop.id}
+                    bookProp={currentBookInLoop}
+                    ratingProp={this.state.ratings}
+                  />
+                );
+              })}
+          </Grid.Row>
 
-
-            <Grid.Row columns={1}>
-              <Grid.Column>Borrow</Grid.Column>
-              {this.state.books.filter(x => x.ratingId === 2).map((currentBookInLoop) => {
-          return (
-            <BookCard
-              key={currentBookInLoop.id}
-              bookProp={currentBookInLoop}
-              ratingProp={this.state.ratings}
-            />
-          );
-        })}
-            </Grid.Row>
-      
-
-            <Grid.Row columns={1}>
-              <Grid.Column>Burn</Grid.Column>
-              {this.state.books.filter(x => x.ratingId === 3).map((currentBookInLoop) => {
-          return (
-            <BookCard
-              key={currentBookInLoop.id}
-              bookProp={currentBookInLoop}
-              ratingProp={this.state.ratings}
-            />
-          );
-        })}
-            </Grid.Row>
-          
+          <Grid.Row columns={1}>
+            <Grid.Column>Burn</Grid.Column>
+            {this.state.books
+              .filter((x) => x.ratingId === 3)
+              .map((currentBookInLoop) => {
+                return (
+                  <BookCard
+                    getAllProp={this.getAllRefresh}
+                    key={currentBookInLoop.id}
+                    bookProp={currentBookInLoop}
+                    ratingProp={this.state.ratings}
+                  />
+                );
+              })}
+          </Grid.Row>
         </Grid>
       </>
     );
