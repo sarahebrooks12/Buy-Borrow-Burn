@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import RegisterManager from "../../modules/RegisterManager";
-import {
-  Grid,
-  Form,
-  Divider,
-  Button,
-  Segment,
-  Icon,
-  Modal,
-} from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 
 //1) register = create
 //2) check database if the user or email exists compare that to state and if that's in state then you can compare the login then if that works then you can perform login credentials
@@ -19,7 +11,7 @@ class Register extends Component {
     email: "",
     password: "",
     users: [],
-    loadingStatus: true,
+    loadingStatus: false,
   };
 
   handleFieldChange = (evt) => {
@@ -28,83 +20,29 @@ class Register extends Component {
     this.setState(stateToChange);
   };
 
-  handleLogin = (e) => {
-    e.preventDefault();
-    RegisterManager.getUserInfo(this.state.email, this.state.password).then((users) => {
-      if (users.length === 0) {
-        window.alert("The login info is incorrect")
-      } else {
-        localStorage.setItem(
-          "credentials",
-          JSON.stringify({
-            email: this.state.email,
-            password: this.state.password,
-            userId: users[0].id
-          })
-        )
-        this.props.history.push("/")
-      }
-    })
-  //   this.state.users.forEach((user) => {
-  //     if (
-  //       this.state.email === user.email &&
-  //       this.state.password === user.password
-  //     ) {
-  //       login = true;
-  //       loginUserId = user.id;
-  //       loginEmailId = user.email;
-  //     }
-  //   });
-  //   if (login === true) {
-  //     localStorage.setItem("userId", loginUserId);
-  //     this.props.history.push("/");
-  //   } else {
-  //     window.alert("Your email and password combination was not recognized!");
-  //   }
-  // };
-
   constructNewUser = (evt) => {
     evt.preventDefault();
-    this.setState({ loadingStatus: true });
-    if (
-      this.state.name === "" ||
-      this.state.email === "" ||
-      this.state.password === ""
-    ) {
-      window.alert("Please input all fields");
+    if (this.state.name === "" || this.state.email === "") {
+      window.alert("Please fill out input fields");
     } else {
-      let register = true;
+      this.setState({ loadingStatus: true });
+      const newUser = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+      };
 
-      this.state.users.forEach((user) => {
-        if (user.email === this.state.email && register === true) {
-          window.alert("This email address has already been taken!");
-          register = false;
-        }  else if (user.username === this.state.username && register === true) {
-          window.alert("This username has already been taken!");
-          register = false
-        }
-      });
-
-      if (register === true) {
-        const newUser = {
-          name: this.state.name,
-          email: this.state.email,
-          password: this.state.password,
-        };
-        RegisterManager.post(newUser).then(() => this.props.history.push("/"));
-      } else {
-        this.setState({ loadingStatus: false });
-      }
+      RegisterManager.postUser(newUser).then(() =>
+        this.props.history.push("/")
+      );
     }
   };
 
   componentDidMount() {
-    //getAll from TaskManager and hang on to that data; put it in state
-
-    RegisterManager.getAll().then((users) => {
+    RegisterManager.getAllUsers().then((users) => {
       this.setState({
         users: users,
-        loadingStatus: false,
+        loadingStatus: true,
       });
     });
   }
@@ -112,99 +50,53 @@ class Register extends Component {
   render() {
     return (
       <>
-        <Segment placeholder>
-          <Grid columns={2} relaxed="very" stackable>
-            <Grid.Column>
-              <Form onSubmit={this.handleLogin}>
-                <Form.Input
-                  onChange={this.handleFieldChange}
-                  icon="user"
-                  iconPosition="left"
-                  label="Email"
-                  type="Email"
-                  placeholder="Email"
-                />
-                <Form.Input
-                  onChange={this.handleFieldChange}
-                  icon="lock"
-                  iconPosition="left"
-                  label="Password"
-                  type="password"
-                />
-
-                <Button
-                  type="submit"
-                  disabled={this.state.loadingStatus}
-                  content="Login"
-                  primary
-                />
-              </Form>
-            </Grid.Column>
-
-            <Grid.Column verticalAlign="middle">
-              <Modal
-                trigger={
-                  <Button
-                    disabled={this.state.loadingStatus}
-                    content="Sign up"
-                    icon="signup"
-                    size="big"
-                  />
-                }
-              >
-                <Modal.Content>
-                  <Form>
-                    <Form.Field>
-                      <label>Name</label>
-                      <input
-                        required
-                        onChange={this.handleFieldChange}
-                        placeholder="Name"
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label>Email</label>
-                      <input
-                        required
-                        onChange={this.handleFieldChange}
-                        type="email"
-                        placeholder="Email"
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label>Password</label>
-                      <input
-                        required
-                        onChange={this.handleFieldChange}
-                        type="password"
-                        placeholder="Password"
-                      />
-                    </Form.Field>
-                    <Button
-                      disabled={this.state.loadingStatus}
-                      onClick={this.constructNewUser}
-                      type="submit"
-                    >
-                      Register
-                    </Button>
-                    <Button
-                      disabled={this.state.loadingStatus}
-                      onClick={() => {
-                        this.props.history.push("/");
-                      }}
-                      type="submit"
-                    >
-                      Return to Login
-                    </Button>
-
-                  </Form>
-                </Modal.Content>
-              </Modal>
-            </Grid.Column>
-          </Grid>
-
-          <Divider vertical>Or</Divider>
-        </Segment>
+        <Form>
+          <Form.Field>
+            <label>Name</label>
+            <input
+              id="name"
+              required
+              onChange={this.handleFieldChange}
+              placeholder="Name"
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Email</label>
+            <input
+              required
+              onChange={this.handleFieldChange}
+              id="email"
+              type="email"
+              placeholder="Email"
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input
+              required
+              onChange={this.handleFieldChange}
+              type="password"
+              id="password"
+              placeholder="Password"
+            />
+          </Form.Field>
+          <Button
+            // disabled={this.state.loadingStatus}
+            onClick={this.constructNewUser}
+            type="submit"
+          >
+            Register
+          </Button>
+          <Button
+            // disabled={this.state.loadingStatus}
+            onClick={() => {
+              this.props.history.push("/");
+            }}
+            type="submit"
+          >
+            Return to Login
+          </Button>
+        </Form>
       </>
     );
   }

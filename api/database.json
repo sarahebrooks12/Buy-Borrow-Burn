@@ -11,6 +11,36 @@
       "name": "Paul",
       "email": "paul@paul.com",
       "password": 123
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "angela",
+      "email": "angela@angela.com",
+      "password": "texas007",
+      "id": 6
+    },
+    {
+      "name": "Swathi",
+      "email": "swathi@swathi.com",
+      "password": "234",
+      "id": 7
     }
   ],
   "ratings": [
@@ -65,6 +95,7 @@
       "favorite": false
     },
     {
+      "id": 4,
       "title": "Verity",
       "author": [
         "Colleen Hoover"
@@ -73,8 +104,7 @@
       "googleBooksRating": 5,
       "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
-      "favorite": true,
-      "id": 4
+      "favorite": true
     },
     {
       "title": "Ninth House",

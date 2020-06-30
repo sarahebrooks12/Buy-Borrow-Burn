@@ -4,6 +4,7 @@ import Home from "./home/Home.js";
 import SearchList from "./search/SearchList"
 import BookList from './books/BookList'
 import Register from "./auth/Register.js";
+import Login from "./auth/Login.js"
 
 
 class ApplicationViews extends Component {
@@ -12,18 +13,18 @@ class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Route
+        <Route
           exact
-          path="/"
+          path="/register"
           render={(props) => {
-            return <Login authProp={this.isAuthenticated()} {...props}/>;
+            return <Register authProp={this.isAuthenticated()} {...props}/>;
           }}
-        /> */}
+        />
         <Route
           exact
           path="/"
           render={(props) => {
-            return <Register {...props} />;
+            return <Login {...props} />;
           }}
         />
         {/* <Route path="/login" component={Login} /> */}

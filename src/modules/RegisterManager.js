@@ -7,15 +7,15 @@ const RegisterManager = {
       getUserInfo(email, password){
         return fetch(`${remoteURL}/users?email=${email}&password=${password}`).then((result) => result.json());
       },
-    post(newUser) {
-    return fetch(`${remoteURL}/users`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+      postUser(newUser) {
+        return fetch(`${remoteURL}/users`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        }).then((data) => data.json());
       },
-      body: JSON.stringify(newUser),
-    }).then((data) => data.json());
-  }
 }
 
 export default RegisterManager;
