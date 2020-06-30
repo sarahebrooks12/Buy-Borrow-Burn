@@ -1,11 +1,11 @@
 const remoteURL = "http://localhost:8088";
 
 const RegisterManager = {
-    getAll() {
+    getAllUsers() {
         return fetch(`${remoteURL}/users`).then((result) => result.json());
       },
-      getByEmail(email){
-        return fetch(`${remoteURL}/users?email=${email}`).then((result) => result.json());
+      getUserInfo(email, password){
+        return fetch(`${remoteURL}/users?email=${email}&password=${password}`).then((result) => result.json());
       },
     post(newUser) {
     return fetch(`${remoteURL}/users`, {
