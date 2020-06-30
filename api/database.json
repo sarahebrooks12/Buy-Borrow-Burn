@@ -29,6 +29,18 @@
       "email": "tommy@tommy.com",
       "password": "123",
       "id": 8
+    },
+    {
+      "name": "sarah",
+      "email": "sarah@sarah.com",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "name": "hank",
+      "email": "hank@hank.com",
+      "password": "123",
+      "id": 10
     }
   ],
   "ratings": [

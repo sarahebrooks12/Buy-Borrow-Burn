@@ -25,6 +25,18 @@ class Register extends Component {
     if (this.state.name === "" || this.state.email === "") {
       window.alert("Please fill out input fields");
     } else {
+    }
+    let register = true;
+    this.state.users.forEach((user) => {
+     
+      if (user.email === this.state.email && register === true) {
+        window.alert("This email has a registered account.");
+        register = false;
+      } else {
+        register = true;
+      }
+    });
+    if (register === true) {
       this.setState({ loadingStatus: true });
       const newUser = {
         name: this.state.name,
