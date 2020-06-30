@@ -40,8 +40,8 @@ class BookCard extends React.Component {
       favorite: this.state.favorite,
     };
     BookManager.updateBook(bookObject).then(
-      () => this.props.history.push("/myBookshelf"),
-      this.confirmClick
+      () => this.props.getAll,
+      // this.confirmClick
     );
   };
 
@@ -49,13 +49,14 @@ class BookCard extends React.Component {
     //invoke the delete function in AnimalManger and re-direct to the animal list.
     this.setState({ loadingStatus: true });
     BookManager.deleteBook(this.props.bookProp.id).then(() =>
-      this.props.history.push("/myBookshelf")
+      this.props.history.push("/myBookshelf#class")
     );
   };
+  
 
-  confirmClick = (event, data) => {
-    this.props.handleClose();
-  };
+  // confirmClick = (event, data) => {
+  //   this.props.handleClose();
+  // };
 
   // sizeSmall = () => {
   //   {this.props.bookProp.image}
