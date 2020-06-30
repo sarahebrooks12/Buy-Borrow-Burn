@@ -10,9 +10,8 @@ import {
   Modal,
 } from "semantic-ui-react";
 
-
 //1) register = create
-//2) check database if the user or email exists compare that to state and if that's in state then you can compare the login then if that works then you can perform login credentials 
+//2) check database if the user or email exists compare that to state and if that's in state then you can compare the login then if that works then you can perform login credentials
 
 class Register extends Component {
   state = {
@@ -31,31 +30,39 @@ class Register extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    let login = false;
-    let loginUserId = 0;
-    /*
-            For now, just store the email and password that
-            the customer enters into local storage.
-        */ this.state.users.forEach(
-      (user) => {
-        if (
-          this.state.email === user.email &&
-          this.state.password === user.password
-        ) {
-          login = true;
-          loginUserId = user.id;
-        }
+    RegisterManager.getUserInfo(this.state.email, this.state.password).then((users) => {
+      if (users.length === 0) {
+        window.alert("The login info is incorrect")
+      } else {
+        localStorage.setItem(
+          "credentials",
+          JSON.stringify({
+            email: this.state.email,
+            password: this.state.password,
+            userId: users[0].id
+          })
+        )
+        this.props.history.push("/")
       }
-    );
-    if (login === true) {
-      localStorage.setItem("userId", loginUserId);
-      this.props.history.push("/");
-    } else {
-      window.alert("Your email and password combination was not recognized!");
-    }
-  };
-  /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-   */
+    })
+  //   this.state.users.forEach((user) => {
+  //     if (
+  //       this.state.email === user.email &&
+  //       this.state.password === user.password
+  //     ) {
+  //       login = true;
+  //       loginUserId = user.id;
+  //       loginEmailId = user.email;
+  //     }
+  //   });
+  //   if (login === true) {
+  //     localStorage.setItem("userId", loginUserId);
+  //     this.props.history.push("/");
+  //   } else {
+  //     window.alert("Your email and password combination was not recognized!");
+  //   }
+  // };
+
   constructNewUser = (evt) => {
     evt.preventDefault();
     this.setState({ loadingStatus: true });
@@ -69,10 +76,12 @@ class Register extends Component {
       let register = true;
 
       this.state.users.forEach((user) => {
-        if (user.email == this.state.email && register == true) {
+        if (user.email === this.state.email && register === true) {
           window.alert("This email address has already been taken!");
           register = false;
-        } else {
+        }  else if (user.username === this.state.username && register === true) {
+          window.alert("This username has already been taken!");
+          register = false
         }
       });
 
@@ -124,6 +133,7 @@ class Register extends Component {
                 />
 
                 <Button
+                  type="submit"
                   disabled={this.state.loadingStatus}
                   content="Login"
                   primary
@@ -143,10 +153,11 @@ class Register extends Component {
                 }
               >
                 <Modal.Content>
-                  <Form onSubmit={this.constructNewUser}>
+                  <Form>
                     <Form.Field>
                       <label>Name</label>
                       <input
+                        required
                         onChange={this.handleFieldChange}
                         placeholder="Name"
                       />
@@ -154,6 +165,7 @@ class Register extends Component {
                     <Form.Field>
                       <label>Email</label>
                       <input
+                        required
                         onChange={this.handleFieldChange}
                         type="email"
                         placeholder="Email"
@@ -162,19 +174,29 @@ class Register extends Component {
                     <Form.Field>
                       <label>Password</label>
                       <input
+                        required
                         onChange={this.handleFieldChange}
                         type="password"
                         placeholder="Password"
                       />
                     </Form.Field>
                     <Button
+                      disabled={this.state.loadingStatus}
+                      onClick={this.constructNewUser}
+                      type="submit"
+                    >
+                      Register
+                    </Button>
+                    <Button
+                      disabled={this.state.loadingStatus}
                       onClick={() => {
                         this.props.history.push("/");
                       }}
                       type="submit"
                     >
-                      Submit
+                      Return to Login
                     </Button>
+
                   </Form>
                 </Modal.Content>
               </Modal>
