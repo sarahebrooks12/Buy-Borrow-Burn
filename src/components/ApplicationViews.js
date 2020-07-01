@@ -5,6 +5,7 @@ import SearchList from "./search/SearchList"
 import BookList from './books/BookList'
 import Register from "./auth/Register.js";
 import Login from "./auth/Login.js"
+import Browse from "./browse/Browse"
 
 
 class ApplicationViews extends Component {
@@ -30,6 +31,14 @@ class ApplicationViews extends Component {
         {/* <Route path="/login" component={Login} /> */}
        
        
+        <Route
+          exact
+          path="/browse"
+          render={(props) => {
+            return <Browse  {...props}/>
+          }}
+        />
+        
         <Route
           exact
           path="/home"
