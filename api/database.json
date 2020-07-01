@@ -41,6 +41,18 @@
       "email": "hank@hank.com",
       "password": "123",
       "id": 10
+    },
+    {
+      "name": "sarah",
+      "email": "sarah@sarah.com",
+      "password": "123",
+      "id": 11
+    },
+    {
+      "name": "barry griffith",
+      "email": "barry@email.com",
+      "password": "abc123",
+      "id": 12
     }
   ],
   "ratings": [
@@ -62,16 +74,6 @@
     }
   ],
   "books": [
-    {
-      "id": 1,
-      "title": "Harry Potter and the Philosopher's Stone",
-      "author": "J.K. Rowling",
-      "ratingId": 1,
-      "googleBooksRating": 4.5,
-      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
-      "userId": 1,
-      "favorite": true
-    },
     {
       "id": 2,
       "title": "The Magicians",
@@ -135,23 +137,35 @@
       "author": [
         "Robert McCammon"
       ],
-      "ratingId": 4,
+      "ratingId": 1,
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": false
+      "favorite": true
     },
     {
+      "id": 11,
       "title": "The Death of Mrs. Westaway",
       "author": [
         "Ruth Ware"
       ],
-      "ratingId": 4,
+      "ratingId": 2,
       "googleBooksRating": 3.5,
       "image": "http://books.google.com/books/content?id=rXVEDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
+      "favorite": false
+    },
+    {
+      "title": "Harry Potter Boxed Set",
+      "author": [
+        "J. K. Rowling"
+      ],
+      "ratingId": "",
+      "googleBooksRating": 4.5,
+      "image": "http://books.google.com/books/content?id=QCp6PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
       "favorite": false,
-      "id": 11
+      "id": 12
     }
   ]
 }

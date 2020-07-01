@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from "./home/Home.js";
 import SearchList from "./search/SearchList"
@@ -8,7 +8,7 @@ import Login from "./auth/Login.js"
 
 
 class ApplicationViews extends Component {
-  isAuthenticated = () => localStorage.getItem("userId") !== null;
+  isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
   render() {
     return (
@@ -17,7 +17,7 @@ class ApplicationViews extends Component {
           exact
           path="/register"
           render={(props) => {
-            return <Register authProp={this.isAuthenticated()} {...props}/>;
+            return <Register {...props}/>;
           }}
         />
         <Route
@@ -48,7 +48,12 @@ class ApplicationViews extends Component {
         exact
         path="/myBookshelf"
         render={(props) => {
-          return <BookList {...props}/>
+          if (this.isAuthenticated()) {
+            return <BookList  {...props}/>
+        } else {
+            return <Redirect to="/" />;
+        }
+         
         }}
         />
       </React.Fragment>
