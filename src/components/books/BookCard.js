@@ -8,6 +8,7 @@ import {
   Button,
   Checkbox,
   Dropdown,
+  Input
 } from "semantic-ui-react";
 import BookManager from "../../modules/BookManager";
 import "./Book.css";
@@ -88,7 +89,8 @@ class BookCard extends React.Component {
               />
             }
           >
-            <Modal.Header>{this.props.bookProp.title}</Modal.Header>
+            <Modal.Header>
+              {this.props.bookProp.title}</Modal.Header>
             <Modal.Content>
               <Header>{this.props.bookProp.author}</Header>
             </Modal.Content>

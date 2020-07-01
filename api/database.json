@@ -121,27 +121,16 @@
       "id": 5
     },
     {
-      "id": 6,
-      "title": "Caraval",
-      "author": [
-        "Stephanie Garber"
-      ],
-      "ratingId": 4,
-      "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "userId": 1,
-      "favorite": false
-    },
-    {
       "id": 8,
       "title": "Swan Song",
       "author": [
         "Robert McCammon"
       ],
-      "ratingId": 1,
+      "ratingId": 4,
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 11,
@@ -156,13 +145,12 @@
       "favorite": false
     },
     {
-      "title": "Harry Potter Boxed Set",
+      "title": "Caraval",
       "author": [
-        "J. K. Rowling"
+        "Stephanie Garber"
       ],
-      "ratingId": "",
-      "googleBooksRating": 4.5,
-      "image": "http://books.google.com/books/content?id=QCp6PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "ratingId": 4,
+      "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false,
       "id": 12
