@@ -11,7 +11,7 @@ export default {
   },
   getTitleSearch(userSearch) {
     return fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=intitle:${userSearch}&orderBy=relevance&key=${APIKey.googleBooksKey}``http:`
+      `https://www.googleapis.com/books/v1/volumes?q=intitle:${userSearch}&orderBy=relevance&key=${APIKey.googleBooksKey}`
     ).then((result) => result.json());
   },
   getAuthorSearch(userSearch) {
