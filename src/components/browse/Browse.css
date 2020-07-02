@@ -1,8 +1,16 @@
 #imageSize {
-    width: 12rem;
-    height: 18rem
+    width: fit-content;
+    height: fit-content;
+    padding: auto;
+    margin: 1em;
 }
+/* 
+center the words
 
+
+*/
 #cardSize {
-    width: 15rem
+    width: 15rem;
+    align-items: center;
+    margin: 1em;
 }

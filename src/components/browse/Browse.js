@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import {
-  Grid,
-  Image,
-  Input,
-  Button,
-  Icon,
-  Label,
   Card,
+  Icon,
+  Image,
+  Button,
+  Modal,
+  Header,
+  Checkbox,
+  Dropdown,
+  Grid,
+  Input, 
+  Label
 } from "semantic-ui-react";
 import BookManager from "../../modules/BookManager";
 import "./Browse.css"
@@ -47,7 +51,7 @@ class Browse extends Component {
     return (
       <div>
         <Grid columns={3} divided>
-          <Grid.Row>
+          <Grid.Row textAlign="center">
             <Grid.Column>
               <Input
                 id="titleSearch"
@@ -97,19 +101,69 @@ class Browse extends Component {
                       <span>{currentResponseInLoop.volumeInfo.authors}</span>
                     </Card.Meta>
                     <Card.Description>
+                      <Icon name="star"/>
                       {currentResponseInLoop.volumeInfo.averageRating}
                     </Card.Description>
-                  </Card.Content>
-                  <Card.Content extra>
-                    <a>
-                      <Icon name="user" />
-                      22 Friends
-                    </a>
                   </Card.Content>
                 </Card>
               );
             })}
-            {/* Map to call cards */}
+            {/* <Modal
+                  trigger={
+                    <Button span animated>
+                      <Button.Content visible>Add to Shelf</Button.Content>
+                      <Button.Content hidden>
+                        <Icon name="book" />
+                      </Button.Content>
+                    </Button>
+                  }
+                >
+                  <Modal.Header>
+                    {this.props.searchProp.volumeInfo.title}
+                  </Modal.Header>
+                  <Modal.Content image>
+                    {this.props.searchProp.volumeInfo.imageLinks ? (
+                      <Image
+                        src={
+                          this.props.searchProp.volumeInfo.imageLinks
+                            .smallThumbnail
+                        }
+                        wrapped
+                        size="small"
+                        ui={false}
+                      />
+                    ) : (
+                      <Image
+                        src={require("./No_Img_Avail.jpg")}
+                        alt="Not Available"
+                        size="small"
+                      />
+                    )}
+                    <Modal.Description>
+                      <Header>
+                        {this.props.searchProp.volumeInfo.authors}
+                      </Header>
+                      {this.props.searchProp.volumeInfo.description}
+                    </Modal.Description>
+                  </Modal.Content>
+
+                  <Checkbox label="Favorite" onChange={this.handleFavorite} />
+                  <Dropdown
+                    placeholder="Select Rating"
+                    fluid
+                    selection
+                    options={this.props.ratingProp}
+                    onChange={this.handleDropDownChange}
+                  />
+                  <br />
+
+                  <Button animated onClick={this.createNewBook}>
+                    <Button.Content visible>Add to Shelf</Button.Content>
+                    <Button.Content hidden>
+                      <Icon name="book" />
+                    </Button.Content>
+                  </Button>
+                </Modal> */}
           </Grid.Row>
         </Grid>
       </div>
