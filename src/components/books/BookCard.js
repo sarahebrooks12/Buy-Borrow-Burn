@@ -85,7 +85,8 @@ class BookCard extends React.Component {
                 header={this.props.bookProp.title}
                 meta={this.props.bookProp.author}
                 image={this.props.bookProp.image}
-                description={this.ternary}
+                // description={this.ternary}
+                // extra={this.ternary("icon")}
               />
             }
           >
