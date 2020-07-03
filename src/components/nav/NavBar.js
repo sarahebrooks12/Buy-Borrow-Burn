@@ -77,7 +77,7 @@ class NavBar extends Component {
               active={activeItem === "myBookshelf"}
               onClick={this.handleItemClick}
             >
-              <Label size="small">51</Label>
+              {/* <Label size="small">51</Label> */}
               Bookshelf
             </Menu.Item>
 
@@ -93,17 +93,7 @@ class NavBar extends Component {
               Browse
             </Menu.Item>
 
-            <Menu.Item
-              id="buttonNav"
-              as={NavLink}
-              to="/following"
-              name="following"
-              active={activeItem === "following"}
-              onClick={this.handleItemClick}
-            >
-              <Label size="small">1</Label>
-              Following
-            </Menu.Item>
+          
             <Menu.Item>
               <Input
                 id="searchBar"
@@ -137,3 +127,15 @@ class NavBar extends Component {
   }
 }
 export default withRouter(NavBar);
+
+{/* <Menu.Item
+id="buttonNav"
+as={NavLink}
+to="/following"
+name="following"
+active={activeItem === "following"}
+onClick={this.handleItemClick}
+>
+<Label size="small">1</Label>
+Following
+</Menu.Item> */}

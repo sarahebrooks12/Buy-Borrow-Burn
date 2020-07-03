@@ -5,7 +5,7 @@ import SearchList from "./search/SearchList"
 import BookList from './books/BookList'
 import Register from "./auth/Register.js";
 import Login from "./auth/Login.js"
-import Browse from "./browse/Browse"
+import BrowseList from "./browse/BrowseList"
 
 
 class ApplicationViews extends Component {
@@ -35,7 +35,7 @@ class ApplicationViews extends Component {
           exact
           path="/browse"
           render={(props) => {
-            return <Browse  {...props}/>
+            return <BrowseList  {...props}/>
           }}
         />
         
