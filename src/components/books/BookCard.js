@@ -8,6 +8,7 @@ import {
   Button,
   Checkbox,
   Dropdown,
+  Input
 } from "semantic-ui-react";
 import BookManager from "../../modules/BookManager";
 import "./Book.css";
@@ -76,19 +77,19 @@ class BookCard extends React.Component {
       <>
         <div>
           <Modal
-            id="resizeThat"
+            id="cardSize"
             trigger={
               <Card
-                id="resizeThis"
-                // href="#class"
+                id="imageSize"
                 header={this.props.bookProp.title}
                 meta={this.props.bookProp.author}
                 image={this.props.bookProp.image}
-                description={this.ternary}
+                fluid={true}
               />
             }
           >
-            <Modal.Header>{this.props.bookProp.title}</Modal.Header>
+            <Modal.Header>
+              {this.props.bookProp.title}</Modal.Header>
             <Modal.Content>
               <Header>{this.props.bookProp.author}</Header>
             </Modal.Content>
@@ -97,7 +98,6 @@ class BookCard extends React.Component {
                 <Image
                   src={this.props.bookProp.image}
                   wrapped
-                  size="small"
                   ui={false}
                 />
               ) : (

@@ -28,6 +28,10 @@ class Login extends Component {
           window.alert("The login info is incorrect");
         } else {
           localStorage.setItem(
+          "isAuthenticated", 
+          true
+          );
+          localStorage.setItem(
             "credentials",
             JSON.stringify({
               email: this.state.email,

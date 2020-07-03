@@ -1,5 +1,4 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React, { Component } from "react";
 import {
   Card,
   Icon,
@@ -11,17 +10,38 @@ import {
   Dropdown,
   Grid,
 } from "semantic-ui-react";
-import "./SearchCard.css";
+import { withRouter } from "react-router-dom";
 import BookManager from "../../modules/BookManager";
-//grid nor card group is working? take off description and try again?
-//connect modal into this card
+import "./Browse.css";
+// import { NavLink, withRouter } from "react-router-dom";
 
-class SearchResultsCard extends React.Component {
+class Browse extends Component {
   state = {
+    titleSearch: "",
+    authorSearch: "",
+    items: [],
     ratingId: "",
     favorite: false,
   };
 
+
+  handleDropDownChange = (event, { value }) => {
+    this.setState({ ratingId: value });
+  };
+  //evt.target.checked=true or false
+  //setState
+  //set Favorite property in state to either true or false
+  handleFavorite = (event, { checked }) => {
+    this.setState({ favorite: checked });
+  };
+
+  handleFieldChange = (evt) => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+    // console.log(evt.target)
+  };
+ 
   createNewBook = (evt) => {
     console.log(this.state.ratingId);
     evt.preventDefault();
@@ -39,20 +59,11 @@ class SearchResultsCard extends React.Component {
     );
   };
 
-  handleDropDownChange = (event, { value }) => {
-    this.setState({ ratingId: value });
-  };
-  //evt.target.checked=true or false
-  //setState
-  //set Favorite property in state to either true or false
-  handleFavorite = (event, { checked }) => {
-    this.setState({ favorite: checked });
-  };
-
   render() {
     return (
-      <>
-        <div id="searchCard">
+      <div>
+        <Grid columns={3} divided>
+          <Grid.Row>
                 <Card id="cardSize">
                   {this.props.searchProp.volumeInfo.imageLinks ? (
                     <Image
@@ -146,11 +157,10 @@ class SearchResultsCard extends React.Component {
                   </Button>
                 </Modal>
                 </Card>
-                
-        </div>
-      </>
+          </Grid.Row>
+        </Grid>
+      </div>
     );
   }
 }
-
-export default withRouter(SearchResultsCard);
+export default withRouter(Browse);

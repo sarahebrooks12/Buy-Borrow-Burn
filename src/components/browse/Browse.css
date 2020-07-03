@@ -1,0 +1,16 @@
+#imageSize {
+    width: fit-content;
+    height: fit-content;
+    padding: auto;
+    margin: 1em;
+}
+/* 
+center the words
+
+
+*/
+#cardSize {
+    width: 15rem;
+    align-items: center;
+    margin: 1em;
+}

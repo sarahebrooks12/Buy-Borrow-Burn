@@ -41,6 +41,18 @@
       "email": "hank@hank.com",
       "password": "123",
       "id": 10
+    },
+    {
+      "name": "sarah",
+      "email": "sarah@sarah.com",
+      "password": "123",
+      "id": 11
+    },
+    {
+      "name": "barry griffith",
+      "email": "barry@email.com",
+      "password": "abc123",
+      "id": 12
     }
   ],
   "ratings": [
@@ -62,38 +74,6 @@
     }
   ],
   "books": [
-    {
-      "id": 1,
-      "title": "Harry Potter and the Philosopher's Stone",
-      "author": "J.K. Rowling",
-      "ratingId": 1,
-      "googleBooksRating": 4.5,
-      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
-      "userId": 1,
-      "favorite": true
-    },
-    {
-      "id": 2,
-      "title": "The Magicians",
-      "author": "Lev Grossman",
-      "ratingId": 3,
-      "googleBooksRating": 3.1,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/916Ua-qyVbL.jpg",
-      "userId": 1,
-      "favorite": false
-    },
-    {
-      "id": 3,
-      "title": "Harry Potter and the Prisoner of Azkaban",
-      "author": [
-        "J. K. Rowling"
-      ],
-      "ratingId": 2,
-      "googleBooksRating": 4.5,
-      "image": "http://books.google.com/books/content?id=swJWQ5qq804C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "userId": 1,
-      "favorite": false
-    },
     {
       "id": 4,
       "title": "Verity",
@@ -119,7 +99,18 @@
       "id": 5
     },
     {
-      "id": 6,
+      "id": 8,
+      "title": "Swan Song",
+      "author": [
+        "Robert McCammon"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false
+    },
+    {
       "title": "Caraval",
       "author": [
         "Stephanie Garber"
@@ -127,31 +118,105 @@
       "ratingId": 4,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": false
+      "favorite": false,
+      "id": 12
     },
     {
-      "id": 8,
-      "title": "Swan Song",
+      "title": "The Magicians",
       "author": [
-        "Robert McCammon"
+        "Lev Grossman"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 3,
+      "image": "http://books.google.com/books/content?id=d84AspgFjSwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 13
+    },
+    {
+      "title": "Verity",
+      "author": [
+        "Colleen Hoover"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 5,
+      "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 14
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "author": [
+        "J. K. Rowling"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4.5,
+      "image": "http://books.google.com/books/content?id=swJWQ5qq804C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 15
+    },
+    {
+      "title": "It Ends with Us",
+      "author": [
+        "Colleen Hoover"
       ],
       "ratingId": 4,
       "googleBooksRating": 4,
-      "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "userId": 1,
-      "favorite": false
-    },
-    {
-      "title": "The Death of Mrs. Westaway",
-      "author": [
-        "Ruth Ware"
-      ],
-      "ratingId": 4,
-      "googleBooksRating": 3.5,
-      "image": "http://books.google.com/books/content?id=rXVEDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "image": "http://books.google.com/books/content?id=peTPCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false,
-      "id": 11
+      "id": 18
+    },
+    {
+      "title": "Shadow and Bone",
+      "author": [
+        "Leigh Bardugo"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=ouBNBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 19
+    },
+    {
+      "title": "Six of Crows",
+      "author": [
+        "Leigh Bardugo"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=yhIRBwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 20
+    },
+    {
+      "title": "Good Omens",
+      "author": [
+        "Neil Gaiman",
+        "Terry Pratchett"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=FsN0mxNThYIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 21
+    },
+    {
+      "title": "Morning Star",
+      "author": [
+        "Pierce Brown"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 4.5,
+      "image": "http://books.google.com/books/content?id=GJqVBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 22
     }
   ]
 }
