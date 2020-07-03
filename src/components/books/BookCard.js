@@ -77,16 +77,14 @@ class BookCard extends React.Component {
       <>
         <div>
           <Modal
-            id="resizeThat"
+            id="cardSize"
             trigger={
               <Card
-                id="resizeThis"
-                // href="#class"
+                id="imageSize"
                 header={this.props.bookProp.title}
                 meta={this.props.bookProp.author}
                 image={this.props.bookProp.image}
-                // description={this.ternary}
-                // extra={this.ternary("icon")}
+                fluid={true}
               />
             }
           >
@@ -100,7 +98,6 @@ class BookCard extends React.Component {
                 <Image
                   src={this.props.bookProp.image}
                   wrapped
-                  size="small"
                   ui={false}
                 />
               ) : (

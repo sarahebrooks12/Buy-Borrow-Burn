@@ -1,8 +1,19 @@
-#resizeThis {
-    width: 10rem;
+#cardSize {
+    width: 15rem;
+    align-items: right;
+    margin: 1em;
+    justify-items: right;
 }
 
-#resizeThat {
-    width: 25rem;
-    /* height: 20rem; */
+#imageSize {
+    width: fit-content;
+    height: fit-content;
+    padding: auto;
+    margin: 1em;
+    align-items: right;
+    direction: flex;
+    flex-wrap: wrap;
+}
+#imageNotAvail {
+    height: 13rem
 }

@@ -11,12 +11,12 @@ export default {
   },
   getTitleSearch(userSearch) {
     return fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=intitle:${userSearch}&orderBy=relevance&key=${APIKey.googleBooksKey}`
+      `https://www.googleapis.com/books/v1/volumes?q=intitle:${userSearch}&orderBy=relevance&maxResults=40&key=${APIKey.googleBooksKey}`
     ).then((result) => result.json());
   },
   getAuthorSearch(userSearch) {
     return fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=inauthor:${userSearch}&orderBy=relevance&key=${APIKey.googleBooksKey}`
+      `https://www.googleapis.com/books/v1/volumes?q=inauthor:${userSearch}&orderBy=relevance&maxResults=40&key=${APIKey.googleBooksKey}`
     ).then((result) => result.json());
   },
   getRatings(){

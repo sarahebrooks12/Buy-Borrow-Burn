@@ -9,11 +9,10 @@ import {
   Checkbox,
   Dropdown,
   Grid,
-  Input, 
-  Label
 } from "semantic-ui-react";
+import { withRouter } from "react-router-dom";
 import BookManager from "../../modules/BookManager";
-import "./Browse.css"
+import "./Browse.css";
 // import { NavLink, withRouter } from "react-router-dom";
 
 class Browse extends Component {
@@ -21,6 +20,19 @@ class Browse extends Component {
     titleSearch: "",
     authorSearch: "",
     items: [],
+    ratingId: "",
+    favorite: false,
+  };
+
+
+  handleDropDownChange = (event, { value }) => {
+    this.setState({ ratingId: value });
+  };
+  //evt.target.checked=true or false
+  //setState
+  //set Favorite property in state to either true or false
+  handleFavorite = (event, { checked }) => {
+    this.setState({ favorite: checked });
   };
 
   handleFieldChange = (evt) => {
@@ -29,86 +41,66 @@ class Browse extends Component {
     this.setState(stateToChange);
     // console.log(evt.target)
   };
-  title = (event) => {
-    if (event.keyCode === 13) {
-      // event.preventDefault();
-      BookManager.getTitleSearch(this.state.titleSearch).then((response) => {
-        // console.log(response)
-        this.setState({ items: response.items });
-      });
-    }
-  };
-  author = (event) => {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      BookManager.getAuthorSearch(this.state.authorSearch).then((response) =>
-        this.setState({ items: response.items })
-      );
-    }
+ 
+  createNewBook = (evt) => {
+    console.log(this.state.ratingId);
+    evt.preventDefault();
+    const bookObject = {
+      title: this.props.searchProp.volumeInfo.title,
+      author: this.props.searchProp.volumeInfo.authors,
+      ratingId: this.state.ratingId,
+      googleBooksRating: this.props.searchProp.volumeInfo.averageRating,
+      image: this.props.searchProp.volumeInfo.imageLinks.smallThumbnail,
+      userId: 1,
+      favorite: this.state.favorite,
+    };
+    BookManager.postBook(bookObject).then(() =>
+      this.props.history.push("/myBookshelf")
+    );
   };
 
   render() {
     return (
       <div>
         <Grid columns={3} divided>
-          <Grid.Row textAlign="center">
-            <Grid.Column>
-              <Input
-                id="titleSearch"
-                onChange={this.handleFieldChange}
-                onKeyDown={this.title}
-                placeholder="Search..."
-              />
-              <Label>Search by Title</Label>
-            </Grid.Column>
-            <Grid.Column>
-              <Input
-                id="authorSearch"
-                onChange={this.handleFieldChange}
-                onKeyDown={this.author}
-                placeholder="Search..."
-              />
-              <Label>Search by Author</Label>
-            </Grid.Column>
-          </Grid.Row>
           <Grid.Row>
-            {this.state.items.map((currentResponseInLoop) => {
-              return (
                 <Card id="cardSize">
-                  {currentResponseInLoop.volumeInfo.imageLinks ? (
+                  {this.props.searchProp.volumeInfo.imageLinks ? (
                     <Image
+                    id="imageSize"
                       src={
-                        currentResponseInLoop.volumeInfo.imageLinks
+                        this.props.searchProp.volumeInfo.imageLinks
                           .smallThumbnail
                       }
                       wrapped
-                      id="imageSize"
-                      size="mini"
+                      size="small"
                       ui={false}
                     />
                   ) : (
                     <Image
+                    id="imageNotAvail"
                       src={require("./No_Img_Avail.jpg")}
                       alt="Not Available"
                       size="small"
                     />
                   )}
+
                   <Card.Content>
                     <Card.Header>
-                      {currentResponseInLoop.volumeInfo.title}
+                      {this.props.searchProp.volumeInfo.title}
                     </Card.Header>
                     <Card.Meta>
-                      <span>{currentResponseInLoop.volumeInfo.authors}</span>
+                      <span>{this.props.searchProp.volumeInfo.authors}</span>
                     </Card.Meta>
-                    <Card.Description>
-                      <Icon name="star"/>
-                      {currentResponseInLoop.volumeInfo.averageRating}
-                    </Card.Description>
+                    <div className="ui divider">
+                      <a>
+                        <Icon name="star" />
+                        {this.props.searchProp.volumeInfo.averageRating}
+                      </a>
+                    </div>
                   </Card.Content>
-                </Card>
-              );
-            })}
-            {/* <Modal
+                  <Modal
+                fluid={true}
                   trigger={
                     <Button span animated>
                       <Button.Content visible>Add to Shelf</Button.Content>
@@ -163,11 +155,12 @@ class Browse extends Component {
                       <Icon name="book" />
                     </Button.Content>
                   </Button>
-                </Modal> */}
+                </Modal>
+                </Card>
           </Grid.Row>
         </Grid>
       </div>
     );
   }
 }
-export default Browse;
+export default withRouter(Browse);

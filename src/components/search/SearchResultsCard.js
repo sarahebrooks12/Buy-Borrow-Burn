@@ -88,8 +88,8 @@ class SearchResultsCard extends React.Component {
                       </a>
                     </div>
                   </Card.Content>
-                </Card>
-                <Modal
+                  <Modal
+                fluid={true}
                   trigger={
                     <Button span animated>
                       <Button.Content visible>Add to Shelf</Button.Content>
@@ -145,6 +145,8 @@ class SearchResultsCard extends React.Component {
                     </Button.Content>
                   </Button>
                 </Modal>
+                </Card>
+                
         </div>
       </>
     );
