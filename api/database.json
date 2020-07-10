@@ -57,20 +57,24 @@
   ],
   "ratings": [
     {
-      "id": 1,
+      "id": 3,
       "name": "Buy"
     },
     {
-      "id": 2,
+      "id": 4,
       "name": "Borrow"
     },
     {
-      "id": 3,
+      "id": 5,
       "name": "Burn"
     },
     {
-      "id": 4,
+      "id": 1,
       "name": "Want to Read"
+    },
+    {
+      "id": 2,
+      "name": "Currently Reading"
     }
   ],
   "books": [
@@ -80,7 +84,7 @@
       "author": [
         "Colleen Hoover"
       ],
-      "ratingId": 1,
+      "ratingId": 3,
       "googleBooksRating": 5,
       "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
@@ -91,7 +95,7 @@
       "author": [
         "Leigh Bardugo"
       ],
-      "ratingId": 2,
+      "ratingId": 4,
       "googleBooksRating": 3.5,
       "image": "http://books.google.com/books/content?id=6dt_DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
@@ -115,7 +119,7 @@
       "author": [
         "Stephanie Garber"
       ],
-      "ratingId": 4,
+      "ratingId": 1,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false,
@@ -126,7 +130,7 @@
       "author": [
         "Lev Grossman"
       ],
-      "ratingId": 3,
+      "ratingId": 5,
       "googleBooksRating": 3,
       "image": "http://books.google.com/books/content?id=d84AspgFjSwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
@@ -134,23 +138,11 @@
       "id": 13
     },
     {
-      "title": "Verity",
-      "author": [
-        "Colleen Hoover"
-      ],
-      "ratingId": 4,
-      "googleBooksRating": 5,
-      "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-      "userId": 1,
-      "favorite": false,
-      "id": 14
-    },
-    {
       "title": "Harry Potter and the Prisoner of Azkaban",
       "author": [
         "J. K. Rowling"
       ],
-      "ratingId": 1,
+      "ratingId": 3,
       "googleBooksRating": 4.5,
       "image": "http://books.google.com/books/content?id=swJWQ5qq804C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
@@ -158,6 +150,7 @@
       "id": 15
     },
     {
+      "id": 18,
       "title": "It Ends with Us",
       "author": [
         "Colleen Hoover"
@@ -166,27 +159,26 @@
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=peTPCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": false,
-      "id": 18
+      "favorite": false
     },
     {
+      "id": 19,
       "title": "Shadow and Bone",
       "author": [
         "Leigh Bardugo"
       ],
-      "ratingId": 1,
+      "ratingId": 3,
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=ouBNBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": true,
-      "id": 19
+      "favorite": false
     },
     {
       "title": "Six of Crows",
       "author": [
         "Leigh Bardugo"
       ],
-      "ratingId": 1,
+      "ratingId": 3,
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=yhIRBwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
@@ -199,7 +191,7 @@
         "Neil Gaiman",
         "Terry Pratchett"
       ],
-      "ratingId": 1,
+      "ratingId": 3,
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=FsN0mxNThYIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
@@ -207,16 +199,52 @@
       "id": 21
     },
     {
-      "title": "Morning Star",
+      "title": "Fangirl",
       "author": [
-        "Pierce Brown"
+        "Rainbow Rowell"
       ],
       "ratingId": 4,
       "googleBooksRating": 4.5,
-      "image": "http://books.google.com/books/content?id=GJqVBgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "image": "http://books.google.com/books/content?id=BfseA9a8xVMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false,
-      "id": 22
+      "id": 23
+    },
+    {
+      "title": "The Death of Mrs. Westaway",
+      "author": [
+        "Ruth Ware"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 3.5,
+      "image": "http://books.google.com/books/content?id=rXVEDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 24
+    },
+    {
+      "id": 25,
+      "title": "The Goldfinch",
+      "author": [
+        "Donna Tartt"
+      ],
+      "ratingId": 2,
+      "googleBooksRating": 3.5,
+      "image": "http://books.google.com/books/content?id=eN4lngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false
+    },
+    {
+      "title": "We Have Always Lived in the Castle",
+      "author": [
+        "Shirley Jackson"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=fRh2aEh3ZfMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 26
     }
   ]
 }
