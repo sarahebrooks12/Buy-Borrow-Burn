@@ -17,3 +17,7 @@
 #imageNotAvail {
     height: 13rem
 }
+
+#border{
+    border: 1px double grey;
+}
