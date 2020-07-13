@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BrowseCard from "./BrowseCard";
 import BookManager from "../../modules/BookManager";
 import { withRouter } from "react-router-dom";
-import { Grid, Input, Label } from "semantic-ui-react";
+import { Grid, Input, Image, Header, Icon } from "semantic-ui-react";
 
 class BrowseList extends Component {
   state = {
@@ -20,7 +20,6 @@ class BrowseList extends Component {
     this.setState(stateToChange);
     // console.log(evt.target)
   };
-
 
   componentDidMount() {
     BookManager.getRatings().then((ratings) => {
@@ -58,26 +57,43 @@ class BrowseList extends Component {
   render() {
     return (
       <>
+      <Image
+            fluid={true}
+            // centered={true}
+            id="Heading"
+            src={require("./BuyBorrowBurn.png")}
+            alt="Logo"
+          />
         <div id="tommyCSS">
-          <Grid columns={3} equal>
+          <Header textAlign="justified center" as="h3">
+            {/* <Icon circular color='white' name='bookmark'/> */}
+            <Header.Content>Search by: </Header.Content>
+          </Header>
+          <Grid columns={2} equal>
             <Grid.Row textAlign="center">
               <Grid.Column>
+                <Header as="h3">
+                  {/* <Icon circular color='white' name='bookmark'/> */}
+                  <Header.Content>Title</Header.Content>
+                </Header>
                 <Input
                   id="titleSearch"
                   onChange={this.handleFieldChange}
                   onKeyDown={this.title}
-                  placeholder="Search..."
+                  placeholder="Search by Title..."
                 />
-                <Label>Search by Title</Label>
               </Grid.Column>
               <Grid.Column>
+                <Header as="h3">
+                  {/* <Icon circular color='white' name='bookmark'/> */}
+                  <Header.Content>Author</Header.Content>
+                </Header>
                 <Input
                   id="authorSearch"
                   onChange={this.handleFieldChange}
                   onKeyDown={this.author}
-                  placeholder="Search..."
+                  placeholder="Search by Author..."
                 />
-                <Label>Search by Author</Label>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row textAlign="center">
