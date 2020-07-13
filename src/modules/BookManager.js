@@ -24,6 +24,11 @@ export default {
     result.json()
   )
   },
+  getAllUsers() {
+    return fetch(`${remoteURL}/users/`).then((result) =>
+      result.json()
+    );
+  },
   getAllBooks() {
     return fetch(`${remoteURL}/books/`).then((result) =>
       result.json()

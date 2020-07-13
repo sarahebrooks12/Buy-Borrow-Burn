@@ -115,15 +115,15 @@
       "favorite": false
     },
     {
+      "id": 12,
       "title": "Caraval",
       "author": [
         "Stephanie Garber"
       ],
-      "ratingId": 1,
+      "ratingId": 2,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
-      "favorite": false,
-      "id": 12
+      "favorite": false
     },
     {
       "title": "The Magicians",
@@ -228,7 +228,7 @@
       "author": [
         "Donna Tartt"
       ],
-      "ratingId": 2,
+      "ratingId": 1,
       "googleBooksRating": 3.5,
       "image": "http://books.google.com/books/content?id=eN4lngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
@@ -245,6 +245,28 @@
       "userId": 1,
       "favorite": false,
       "id": 26
+    },
+    {
+      "title": "Hinch Yourself Happy",
+      "author": [
+        "Mrs Hinch"
+      ],
+      "ratingId": 4,
+      "image": "http://books.google.com/books/content?id=XYN-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 27
+    },
+    {
+      "title": "This Is Me",
+      "author": [
+        "Mrs Hinch"
+      ],
+      "ratingId": 1,
+      "image": "http://books.google.com/books/content?id=weDuDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 28
     }
   ]
 }

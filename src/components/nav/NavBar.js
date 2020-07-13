@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Label, Menu, Sidebar, Button, Icon } from "semantic-ui-react";
+import { Input, Image, Menu, Sidebar, Button, Icon } from "semantic-ui-react";
 import { NavLink, withRouter } from "react-router-dom";
 import BookManager from "../../modules/BookManager";
 import "./NavBar.css";
@@ -30,9 +30,8 @@ class NavBar extends Component {
     }
   };
 
-  isAuthenticated = () => localStorage.getItem("userId") !== null
-  
-  
+  isAuthenticated = () => localStorage.getItem("userId") !== null;
+
   clearStorage = () => {
     localStorage.clear();
     this.props.history.push("/home");
@@ -45,7 +44,7 @@ class NavBar extends Component {
 
     return (
       <>
-        <p>Sarah</p>
+        
         <Sidebar
           id="sideBar"
           as={Menu}
@@ -56,8 +55,8 @@ class NavBar extends Component {
           vertical
           visible
         >
-          {/* add image to top corner? make it longer that way? */}
-          <Menu color="purple" vertical fluid={true}>
+          <Image id="BBB" src={require("./BBB.png")} alt="Logo" size="small" />
+          <Menu color="black" vertical fluid={true}>
             <Menu.Item
               id="buttonNav"
               as={NavLink}
@@ -93,7 +92,6 @@ class NavBar extends Component {
               Browse
             </Menu.Item>
 
-          
             <Menu.Item>
               <Input
                 id="searchBar"
@@ -128,7 +126,8 @@ class NavBar extends Component {
 }
 export default withRouter(NavBar);
 
-{/* <Menu.Item
+{
+  /* <Menu.Item
 id="buttonNav"
 as={NavLink}
 to="/following"
@@ -138,4 +137,5 @@ onClick={this.handleItemClick}
 >
 <Label size="small">1</Label>
 Following
-</Menu.Item> */}
+</Menu.Item> */
+}
