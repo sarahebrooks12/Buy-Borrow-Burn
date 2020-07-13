@@ -114,7 +114,7 @@ class BookList extends Component {
           <br />
           <Grid.Row id="border" columns={1}>
             <Grid.Column><Header as="h2">
-                <Icon circular inverted color='orange' name='heart outline'/>
+                <Icon circular inverted color='orange' name='recycle'/>
                 <Header.Content>Borrow</Header.Content>
               </Header></Grid.Column>
             {this.state.books
