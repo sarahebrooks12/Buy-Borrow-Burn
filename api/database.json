@@ -88,7 +88,7 @@
       "googleBooksRating": 5,
       "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
-      "favorite": true
+      "favorite": false
     },
     {
       "title": "Ninth House",
@@ -267,6 +267,54 @@
       "userId": 1,
       "favorite": false,
       "id": 28
+    },
+    {
+      "title": "Talking to Strangers",
+      "author": [
+        "Malcolm Gladwell"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=DwaHDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 29
+    },
+    {
+      "id": 30,
+      "title": "Children of Blood and Bone",
+      "author": [
+        "Tomi Adeyemi"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=Yp9GDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": true
+    },
+    {
+      "title": "Children of Virtue and Vengeance",
+      "author": [
+        "Tomi Adeyemi"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 3,
+      "image": "http://books.google.com/books/content?id=9g9UDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 32
+    },
+    {
+      "title": "The Southern Book Club's Guide to Slaying Vampires",
+      "author": [
+        "Grady Hendrix"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=-emBDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 33
     }
   ]
 }
