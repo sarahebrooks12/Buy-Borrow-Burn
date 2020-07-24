@@ -108,7 +108,7 @@
       "author": [
         "Robert McCammon"
       ],
-      "ratingId": 1,
+      "ratingId": 2,
       "googleBooksRating": 4,
       "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
@@ -120,7 +120,7 @@
       "author": [
         "Stephanie Garber"
       ],
-      "ratingId": 2,
+      "ratingId": 4,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false
