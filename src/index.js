@@ -5,10 +5,10 @@ import "./index.css";
 import Main from "./components/Main";
 
 ReactDOM.render(
-  <React.StrictMode>
+
   <Router>
     <Main />
-  </Router>
-  </React.StrictMode>,
+  </Router>,
+
   document.getElementById('root')
 );
