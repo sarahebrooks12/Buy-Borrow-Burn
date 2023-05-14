@@ -31,28 +31,22 @@
       "id": 8
     },
     {
-      "name": "sarah",
-      "email": "sarah@sarah.com",
-      "password": "123",
-      "id": 9
-    },
-    {
       "name": "hank",
       "email": "hank@hank.com",
       "password": "123",
       "id": 10
     },
     {
-      "name": "sarah",
-      "email": "sarah@sarah.com",
-      "password": "123",
-      "id": 11
-    },
-    {
       "name": "barry griffith",
       "email": "barry@email.com",
       "password": "abc123",
       "id": 12
+    },
+    {
+      "name": "Sarah",
+      "email": "bbb@mail.com",
+      "password": "sarah123",
+      "id": 13
     }
   ],
   "ratings": [
@@ -88,7 +82,7 @@
       "googleBooksRating": 5,
       "image": "http://books.google.com/books/content?id=QQOdvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
-      "favorite": true
+      "favorite": false
     },
     {
       "title": "Ninth House",
@@ -103,24 +97,12 @@
       "id": 5
     },
     {
-      "id": 8,
-      "title": "Swan Song",
-      "author": [
-        "Robert McCammon"
-      ],
-      "ratingId": 1,
-      "googleBooksRating": 4,
-      "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "userId": 1,
-      "favorite": false
-    },
-    {
       "id": 12,
       "title": "Caraval",
       "author": [
         "Stephanie Garber"
       ],
-      "ratingId": 2,
+      "ratingId": 4,
       "image": "http://books.google.com/books/content?id=kA-HDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false
@@ -138,6 +120,7 @@
       "id": 13
     },
     {
+      "id": 15,
       "title": "Harry Potter and the Prisoner of Azkaban",
       "author": [
         "J. K. Rowling"
@@ -146,8 +129,7 @@
       "googleBooksRating": 4.5,
       "image": "http://books.google.com/books/content?id=swJWQ5qq804C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "userId": 1,
-      "favorite": true,
-      "id": 15
+      "favorite": true
     },
     {
       "id": 18,
@@ -258,15 +240,150 @@
       "id": 27
     },
     {
-      "title": "This Is Me",
+      "id": 29,
+      "title": "Talking to Strangers",
       "author": [
-        "Mrs Hinch"
+        "Malcolm Gladwell"
       ],
-      "ratingId": 1,
-      "image": "http://books.google.com/books/content?id=weDuDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "ratingId": 3,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=DwaHDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false
+    },
+    {
+      "id": 30,
+      "title": "Children of Blood and Bone",
+      "author": [
+        "Tomi Adeyemi"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=Yp9GDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": true
+    },
+    {
+      "title": "Children of Virtue and Vengeance",
+      "author": [
+        "Tomi Adeyemi"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 3,
+      "image": "http://books.google.com/books/content?id=9g9UDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
       "userId": 1,
       "favorite": false,
-      "id": 28
+      "id": 32
+    },
+    {
+      "title": "The Map of Salt and Stars",
+      "author": [
+        "Zeyn Joukhadar"
+      ],
+      "ratingId": 2,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=fLeHDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 35
+    },
+    {
+      "title": "Fantastic Beasts and Where to Find Them",
+      "author": [
+        "J.K. Rowling",
+        "Newt Scamander"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=ASImDQAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 36
+    },
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": [
+        "Inc. Scholastic",
+        "J. K. Rowling",
+        "Mary GrandPre"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4.5,
+      "image": "http://books.google.com/books/content?id=HBVunAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 37
+    },
+    {
+      "title": "The Casual Vacancy",
+      "author": [
+        "J. K. Rowling"
+      ],
+      "ratingId": 4,
+      "googleBooksRating": 3,
+      "image": "http://books.google.com/books/content?id=a7iuAL4XQ2UC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 38
+    },
+    {
+      "title": "Swan Song",
+      "author": [
+        "Robert McCammon"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=1LyyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 39
+    },
+    {
+      "title": "Harry Potter and the Half-Blood Prince",
+      "author": [
+        "J. K. Rowling"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4.5,
+      "image": "http://books.google.com/books/content?id=L2EQuwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 40
+    },
+    {
+      "title": "The Song of Achilles",
+      "author": [
+        "Madeline Miller"
+      ],
+      "ratingId": 1,
+      "googleBooksRating": 4,
+      "image": "http://books.google.com/books/content?id=ayxRnwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false,
+      "id": 41
+    },
+    {
+      "id": 42,
+      "title": "The Song of Achilles (Enhanced Edition)",
+      "author": [
+        "Madeline Miller"
+      ],
+      "ratingId": 3,
+      "image": "http://books.google.com/books/content?id=wkgdEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": false
+    },
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": [
+        "J. K. Rowling"
+      ],
+      "ratingId": 3,
+      "googleBooksRating": 4.5,
+      "image": "http://books.google.com/books/content?id=mvmGPgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "userId": 1,
+      "favorite": true,
+      "id": 43
     }
   ]
 }

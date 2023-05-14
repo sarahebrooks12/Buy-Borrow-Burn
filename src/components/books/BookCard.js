@@ -7,8 +7,7 @@ import {
   Header,
   Button,
   Checkbox,
-  Dropdown,
-  Input
+  Dropdown
 } from "semantic-ui-react";
 import BookManager from "../../modules/BookManager";
 import "./Book.css";
